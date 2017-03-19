@@ -9,9 +9,10 @@ sv:
     and: och
     share: DELA detta inlägg
     edit: Redigera
-    delete: Ta bort
+    delete: Arkivera
     drafts: Utkast
     published: Publicerade inlägg
+    archived: Arkiverade inlägg
     is_published: Publicerad
     profile: Profil
     sign_out: Logga ut
@@ -19,6 +20,7 @@ sv:
     sign_up: Registrera konto
     remember_me: Kom ihåg mig
     publish: Publicera
+    archive: Arkivera
     save: Spara
     cancel: Avbryt
     see_all: Se alla...
@@ -52,7 +54,7 @@ sv:
     bookmarks: Sparade inlägg
     write_a_story: Nytt inlägg
     tell_your_story: Berätta en historia...
-    sign_in_up: Logga in / Registrera dig
+    sign_in_up: Gå med och börja berätta!
     staff_pick: Utvalda inlägg
   headings:
     all: Allt
@@ -102,7 +104,7 @@ sv:
     title: Titel
     previous: Förra
     next: Nästa
-
+    activate_post?: Vill du aktivera detta inlägg?
   activerecord:
     models:
       post: inlägg
