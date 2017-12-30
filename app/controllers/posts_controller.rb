@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
-  layout "editor", only: [:new, :edit, :create, :update]
+  layout 'editor', only: [:new, :edit, :create, :update]
 
   def show
     @post = Post.find(params[:id])

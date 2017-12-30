@@ -38,8 +38,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'will_paginate', '~> 3.1'
 
 # Elasticsearch
-gem 'elasticsearch-model', '~> 0.1.8'
-gem 'elasticsearch-rails', '~> 0.1.8'
+gem 'elasticsearch-model', '~> 5.0', '>= 5.0.2'
+gem 'elasticsearch-rails', '~> 5.0', '>= 5.0.2'
 
 # Background Job
 gem 'sidekiq', '~> 4.0'
