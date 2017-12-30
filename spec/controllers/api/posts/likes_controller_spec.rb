@@ -11,7 +11,7 @@ RSpec.describe API::Posts::LikesController do
     describe "POST #create" do
 
       it "requires a logged-in user and responds with 401 Unauthorized" do
-        xhr :post, :create, post_id: @post.id
+        post :create, params: {post_id: @post.id}, xhr: true
         expect(response.status).to eq(401)
       end
 
@@ -22,13 +22,15 @@ RSpec.describe API::Posts::LikesController do
         end
 
         it "allows user to like a post" do
-          xhr :post, :create, post_id: @post.id
+          post :create, params: {post_id: @post.id}, xhr: true
           expect(@user.liked?(@post)).to be_truthy
         end
 
         it "notifies the author" do
-          expect{ xhr :post, :create, post_id: @post.id }.
-            to change(@author.notifications, :count).by(1)
+          expect do
+            post :create, params: {post_id: @post.id}, xhr: true
+          end
+              .to change(@author.notifications, :count).by(1)
         end
       end
     end
@@ -36,7 +38,7 @@ RSpec.describe API::Posts::LikesController do
     describe "DELETE #destroy" do
 
       it "requires a logged-in user and responds with 401 Unauthorized" do
-        xhr :delete, :destroy, post_id: @post.id
+        delete :destroy, params: {post_id: @post.id}, xhr: true
         expect(response.status).to eq(401)
       end
 
@@ -48,7 +50,7 @@ RSpec.describe API::Posts::LikesController do
         end
 
         it "allows user to unlike a post" do
-          xhr :delete, :destroy, post_id: @post.id
+          delete :destroy, params: {post_id: @post.id}, xhr: true
           expect(@user.liked?(@post)).to be_falsy
         end
 

@@ -56,14 +56,16 @@ class User < ActiveRecord::Base
   include OmniauthableUser
 
   extend FriendlyId
-  friendly_id :username, use: [ :slugged, :finders ]
+  friendly_id :username, use: [:slugged, :finders]
 
   def add_like_to(likeable_obj)
     likes.where(likeable: likeable_obj).first_or_create
+    self.reload
   end
 
   def remove_like_from(likeable_obj)
     likes.where(likeable: likeable_obj).destroy_all
+    self.reload
   end
 
   def liked?(likeable_obj)
@@ -72,10 +74,12 @@ class User < ActiveRecord::Base
 
   def add_bookmark_to(bookmarkable_obj)
     bookmarks.where(bookmarkable: bookmarkable_obj).first_or_create
+    self.reload
   end
 
   def remove_bookmark_from(bookmarkable_obj)
     bookmarks.where(bookmarkable: bookmarkable_obj).destroy_all
+    self.reload
   end
 
   def bookmarked?(bookmarkable_obj)
@@ -84,24 +88,24 @@ class User < ActiveRecord::Base
 
   private
 
-    # Validates the size on an uploaded image.
-    def avatar_image_size
-      if avatar.size > 5.megabytes
-        errors.add(:avatar, "should be less than 5MB")
-      end
+  # Validates the size on an uploaded image.
+  def avatar_image_size
+    if avatar.size > 5.megabytes
+      errors.add(:avatar, "should be less than 5MB")
     end
+  end
 
-    # Returns a string of the objects class name downcased.
-    def downcased_class_name(obj)
-      obj.class.to_s.downcase
-    end
+  # Returns a string of the objects class name downcased.
+  def downcased_class_name(obj)
+    obj.class.to_s.downcase
+  end
 
-    # Clears notifications where deleted user is the actor.
-    def clear_notifications
-      Notification.where(actor_id: self.id).destroy_all
-    end
+  # Clears notifications where deleted user is the actor.
+  def clear_notifications
+    Notification.where(actor_id: self.id).destroy_all
+  end
 
-    def send_welcome_email
-      WelcomeEmailJob.perform_later(self.id)
-    end
+  def send_welcome_email
+    WelcomeEmailJob.perform_later(self.id)
+  end
 end

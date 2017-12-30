@@ -9,10 +9,12 @@ module TagFollowing
 
   def follow_tag(tag)
     interests.create(tag_id: tag.id)
+    self.reload
   end
 
   def unfollow_tag(tag)
     interests.find_by(tag_id: tag.id).destroy
+    self.reload
   end
 
   def following_tag?(tag)
