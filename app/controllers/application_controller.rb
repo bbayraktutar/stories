@@ -13,14 +13,12 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:username, :email, :password, :password_confirmation, :remember_me)
-    end
-    devise_parameter_sanitizer.for(:sign_in) do |u|
-      u.permit(:login, :username, :email, :password, :remember_me)
-    end
-    devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:username, :email, :password, :password_confirmation, :current_password)
+    permitted_parameters = devise_parameter_sanitizer.instance_values['permitted']
+    attributes = [:username, :email, :password, :password_confirmation, :remember_me, :current_password]
+    attributes.each do |attribute|
+      permitted_parameters[:sign_up] << attribute
+      permitted_parameters[:sign_in] << attribute
+      permitted_parameters[:account_update] << attribute
     end
   end
 

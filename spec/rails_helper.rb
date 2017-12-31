@@ -9,6 +9,10 @@ require 'rspec/rails'
 require 'devise'
 require 'capybara/rails'
 require 'capybara/poltergeist'
+
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, :inspector => true)
+end
 Capybara.javascript_driver = :poltergeist
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
