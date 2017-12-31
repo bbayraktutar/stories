@@ -1,10 +1,17 @@
 en:
-  apppication:
+  application:
     name: Torgny
     dashboard: Dashboard
+    search: Search
   header:
     home: Home
     top_stories: Top Stories
     bookmarks: Bookmarks
     write_a_story: Write a story
     sign_in_up: Sign In / Sing Up
+  headings:
+    tagged_in: Tagged in
+    top_stories: Top stories
+    tags_you_follow: Tags you follow
+    related_tags: Related Tags
+    people_interested_in: People Interested in

@@ -17,7 +17,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require turbolinks
 //= require medium-editor
 //= require handlebars
 //= require jquery-sortable
@@ -29,8 +28,12 @@
 //= require jquery.autoSave
 //= require pubsub
 //= require bootstrap-sprockets
+//= require i18n
+//= require i18n/translations
 //= require react
 //= require react_ujs
 //= require components
 //= require init
 //= require page_specific
+
+

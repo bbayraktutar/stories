@@ -16,6 +16,8 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+
 module Stories
   class Application < Rails::Application
     config.generators do |generate|
@@ -27,5 +29,9 @@ module Stories
       generate.controller_specs false
     end
     config.active_job.queue_adapter = :sidekiq
+    config.i18n.available_locales = [:sv, :en]
+    config.i18n.default_locale = :sv
+    config.middleware.use I18n::JS::Middleware
   end
 end
+

@@ -11,6 +11,7 @@ gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 gem 'railties', '< 5.2', '>= 4.1.0'
+gem 'i18n-js'
 
 # Auth
 gem 'devise'

@@ -21,7 +21,7 @@
             <div class="story-card" id="story_<%= draft.id %>">
               <strong class="sc-title"><%= link_to (draft.title || "Untitled"), edit_post_path(draft) %></strong>
               <small class="sc-metadata">
-                Last edited <%= time_ago_in_words(draft.updated_at) %> ago &#149; 
+                Last edited <%= [time_ago_in_words(draft.updated_at), t('application.ago')].join(' ') %> &#149;
                 <% if draft.body.present? %>
                   <%= post_length_in_minutes(draft.body) %> 
                   (<%= pluralize(draft.word_count, 'word') %>) so far &#149;
