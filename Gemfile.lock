@@ -519,9 +519,6 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.8)
     trollop (2.1.2)
-    turbolinks (5.0.1)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.3)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
     uglifier (4.1.2)
@@ -599,7 +596,6 @@ DEPENDENCIES
   slim
   spring
   spring-commands-rspec
-  turbolinks (~> 5)
   uglifier
   web-console
   will_paginate
