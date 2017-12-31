@@ -431,7 +431,7 @@ GEM
       nokogiri (~> 1.5)
       trollop (~> 2.1)
     rdoc (4.3.0)
-    react-rails (2.4.3)
+    react-rails (2.3.1)
       babel-transpiler (>= 0.7.0)
       connection_pool
       execjs
@@ -580,7 +580,7 @@ DEPENDENCIES
   rails-controller-testing
   rails_best_practices
   railties (>= 4.1.0, < 5.2)
-  react-rails
+  react-rails (= 2.3.1)
   rspec-rails
   sass-rails
   sdoc

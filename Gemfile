@@ -19,7 +19,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
 # Front-end
-gem 'react-rails'
+gem 'react-rails', '2.3.1'
 gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'font-awesome-sass'
