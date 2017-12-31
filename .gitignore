@@ -30,3 +30,5 @@ brakeman.html
 
 .idea/
 .idea/*
+
+.env

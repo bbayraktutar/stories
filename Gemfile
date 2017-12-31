@@ -87,6 +87,7 @@ group :development do
   gem 'bullet'
   #gem 'quiet_assets'
   #gem 'quiet_assets', '~> 1.1'
+  gem 'dotenv'
 end
 
 group :test do
@@ -99,5 +100,5 @@ group :test do
 end
 
 group :production do
-  #gem 'bonsai-elasticsearch-rails', '~> 0.2.0'
+  gem 'bonsai-elasticsearch-rails'
 end
