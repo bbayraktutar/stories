@@ -7,8 +7,8 @@
         <%= render 'shared/inline_editor' %>
       </div>
     <% else %>
-
-  </div>
-      <a class="button green-cta-button" href="#" role="button">Learn more</a>
+      <%= link_to t('header.sign_in_up'), new_user_session_path, class: 'button green-cta-button', data: {behavior: 'trigger-overlay'} %>
     <% end %>
+  </div>
+
 </div>

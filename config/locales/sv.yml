@@ -14,6 +14,9 @@ sv:
     published: Publicerade inlägg
     profile: Profil
     sign_out: Logga ut
+    sign_in: Logga in
+    sign_up: Registrera konto
+    remember_me: Kom ihåg mig
     see_all: Se alla inlägg
     length:
       less_than_one_minute: 'läses under en minut'
@@ -25,6 +28,7 @@ sv:
     write_a_story: Nytt inlägg
     tell_your_story: Berätta...
     sign_in_up: Logga in / Registrera dig
+    staff_pick: Utvalda inlägg
   headings:
     tagged_in: Tag
     top_stories: Mest lästa
@@ -51,6 +55,9 @@ sv:
     is_followed_by: är följd av
     followers_singular: Följare
     followers_plural: Följare
+    sign_in_or_create_account: 'Logga in eller skapa ett konto bekvämt med följande tjänster:'
+    sign_in_with_email: Eller använd din email och lösenord
+    sign_in__with: Använd %{source}
 
   activerecord:
       errors:

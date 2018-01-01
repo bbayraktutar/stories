@@ -3,13 +3,13 @@
   padding: 0.6em 1em 0.7em 1em;
   @include border-radius($button);
   text-decoration: none;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 14px;
   outline: none;
   transition: all .1s;
   &:hover {
     text-decoration: none;
-    color: rgba(0,0,0,0.8);
+    color: rgba(0, 0, 0, 0.8);
     border-color: $border-hover-color;
   }
 
@@ -30,13 +30,14 @@
   }
   &.green-cta-button {
     position: absolute;
-    top: 40%;
-    left: 40%;
-    color: #fff;
+    bottom: -10em;
+    left: 35%;
     font-size: 3rem;
-    background-color: $button-green;
-    border-color: $button-green;
-    border-radius: 5px;
+    color: $accent-color !important; // override bootstrap styles
+    border-color: $accent-color;
+    background-color: #fff;
+    opacity: 0.8;
+    border-radius: 15px;
   }
 }
 
@@ -57,28 +58,29 @@
     font-weight: bold;
   }
 }
- .unfollow-button {
-   position: relative;
-   width: 6.5em;
-   overflow: hidden;
-   display: inline-block;
-   .content {
-     position: absolute;
-     padding: 0.63em 1em;
-     left: 0;
-     transition: top 0.4s ease 0.1s;
-     overflow: hidden;
-   }
-   .top {
-     top: 0;
-   }
-   &:hover .top {
-     top: -80px;
-   }
-   .bottom {
-     top: 80px;
-   }
-   &:hover .bottom {
-     top: 0;
-   }
- }
+
+.unfollow-button {
+  position: relative;
+  width: 6.5em;
+  overflow: hidden;
+  display: inline-block;
+  .content {
+    position: absolute;
+    padding: 0.63em 1em;
+    left: 0;
+    transition: top 0.4s ease 0.1s;
+    overflow: hidden;
+  }
+  .top {
+    top: 0;
+  }
+  &:hover .top {
+    top: -80px;
+  }
+  .bottom {
+    top: 80px;
+  }
+  &:hover .bottom {
+    top: 0;
+  }
+}

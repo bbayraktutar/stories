@@ -71,8 +71,6 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'rails-controller-testing'
-  #gem 'poltergeist'
-  gem 'selenium-webdriver'
   gem 'chromedriver-helper'
   gem 'awesome_print'
   gem 'bundler-audit', '~> 0.6.0'
@@ -89,8 +87,6 @@ group :development do
   gem 'rack-mini-profiler', require: false
   gem 'annotate'
   gem 'bullet'
-  #gem 'quiet_assets'
-  #gem 'quiet_assets', '~> 1.1'
   gem 'dotenv'
 end
 
@@ -100,7 +96,6 @@ group :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'launchy'
-  gem 'selenium-webdriver'
 end
 
 group :production do

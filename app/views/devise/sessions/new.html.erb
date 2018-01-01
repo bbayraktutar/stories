@@ -11,15 +11,15 @@
           <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
         </div>
 
-        <%= f.submit "Log in", class: "button green-inner-button" %>
+        <%= f.submit t('application.sign_in'), class: "button green-inner-button" %>
 
         <% if devise_mapping.rememberable? -%>
           <div class="field remember-me">
             <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+            <%= f.label :remember_me, t('application.remember_me') %>
           </div>
         <% end -%>
-        <%= link_to "Sign up", new_user_registration_path, class: 'button green-border-button pull-right' %>
+        <%= link_to t('application.sign_up'), new_user_registration_path, class: 'button green-border-button pull-right' %>
 
       <% end %>
     </div>
