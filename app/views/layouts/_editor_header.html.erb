@@ -25,14 +25,14 @@
             <span class="dropdown-arrow-bottom"></span>
             <div>
               <h4>Ready to Publish your work?</h4>
-              <p>Add tags to reach more people</p>
+              <p><%= t('headings.add_tags') %></p>
               <div class="clearfix" data-behavior="tags" data-tags="<%= @post.all_tags %>">
                 <div id="js-taggle" style="position: relative;" data-behavior="autosave"></div>
               </div>
             </div>
             <hr />
             <div>
-              <button class="button green-border-button pull-right" data-behavior="publish-button">Publish</button>
+              <button class="button green-border-button pull-right" data-behavior="publish-button"><%= t('application.publish') %></button>
             </div>
           </ul>
         </li>
