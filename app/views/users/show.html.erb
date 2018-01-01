@@ -3,10 +3,18 @@
     <header class="hero">
       <div class="profile-info">
         <h1 class="hero-title"><%= @user.username %></h1>
-        <p class="hero-description"><%= @user.description %></p>
+        <% if @user.description.present? %>
+          <div class="hero-description">
+            <p>
+              <%= icon('book') %><%= @user.description %>
+            </p>
+          </div>
+        <% end %>
         <% if @user.location.present? %>
           <div class="hero-location">
-            <%= icon('map-marker') %><%= @user.location %>
+            <p>
+              <%= icon('map-marker') %><%= @user.location %>
+            </p>
           </div>
         <% end %>
       </div>

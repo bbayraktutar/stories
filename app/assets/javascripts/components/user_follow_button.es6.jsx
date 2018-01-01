@@ -1,114 +1,114 @@
 class UserFollowButton extends React.Component {
-  constructor(props) {
-    super(props)
+    constructor(props) {
+        super(props)
 
-    this.state = { following: this.props.following };
-  }
-
-  componentWillMount() {
-    this.token = PubSub.subscribe('UserFollowButton:onClick', (msg, data) => {
-      if (this.props.followed_id === data.followed_id) {
-        this.setState({ following: data.following });
-      }
-    })
-  }
-
-  componentWillUnmount() {
-    PubSub.unsubscribe(this.token);
-  }
-
-  render () {
-    return (
-      <div>
-        {this.renderButton()}
-      </div>
-    );
-  }
-
-  renderButton() {
-
-    if (window.userSignedIn === false) {
-      return (
-        <a href="" className="button green-border-button follow-button" onClick={this.openOverlay}>
-          Follow
-        </a>
-      );
+        this.state = {following: this.props.following};
     }
 
-    if (this.state.following) {
-      return (
-        <button 
-          className="button green-inner-button unfollow-button" 
-          onClick={this.handleUnfollowClick.bind(this)}
-          rel="nofollow" 
-          >
-          <span className="top content">Following</span><br />
-          <span className="bottom content">Unfollow</span>
-        </button>
-      );
-    } else {
-      return (
-        <button
-          onClick={this.handleFollowClick.bind(this)}
-          className="button green-border-button follow-button" 
-          rel="nofollow" 
-        >
-          Follow
-        </button>
-      );
+    componentWillMount() {
+        this.token = PubSub.subscribe('UserFollowButton:onClick', (msg, data) => {
+            if (this.props.followed_id === data.followed_id) {
+                this.setState({following: data.following});
+            }
+        })
     }
-  }
 
-  // FIXME: this is not really a React way. Maybe create an Overlay and
-  // TriggerOverlayButton components?
-  openOverlay(event) {
-    event.preventDefault();
-    $('[data-behavior="overlay"]').addClass('open');
-  }
+    componentWillUnmount() {
+        PubSub.unsubscribe(this.token);
+    }
 
-  handleFollowClick(event) {
-    $.ajax({
-      url: `/api/relationships?followed_id=${this.props.followed_id}`,
-      method: 'POST',
-      success: (data) => {
-        this.setState({
-          following: true
-        });
+    render() {
+        return (
+            <div>
+                {this.renderButton()}
+            </div>
+        );
+    }
 
-        if (this.props.onFollowerCountChange) {
-          this.props.onFollowerCountChange(data.followerCount);
+    renderButton() {
+
+        if (window.userSignedIn === false) {
+            return (
+                <a href="" className="button green-border-button follow-button" onClick={this.openOverlay}>
+                    {I18n.t('headings.follow')}
+                </a>
+            );
         }
-        PubSub.publish('UserFollowButton:onClick', {
-          followed_id: this.props.followed_id,
-          following: true
-        });
-      }
-    });
 
-  }
-
-  handleUnfollowClick(event) {
-    $.ajax({
-      url: `/api/relationships?followed_id=${this.props.followed_id}`,
-      method: 'DELETE',
-      success: (data) => {
-        this.setState({
-          following: false
-        });
-
-        if (this.props.onFollowerCountChange) {
-          this.props.onFollowerCountChange(data.followerCount);
+        if (this.state.following) {
+            return (
+                <button
+                    className="button green-inner-button unfollow-button"
+                    onClick={this.handleUnfollowClick.bind(this)}
+                    rel="nofollow"
+                >
+                    <span className="top content">{I18n.t('headings.following')}</span><br/>
+                    <span className="bottom content">{I18n.t('headings.unfollow')}</span>
+                </button>
+            );
+        } else {
+            return (
+                <button
+                    onClick={this.handleFollowClick.bind(this)}
+                    className="button green-border-button follow-button"
+                    rel="nofollow"
+                >
+                    {I18n.t('headings.follow')}
+                </button>
+            );
         }
-        PubSub.publish('UserFollowButton:onClick', {
-          followed_id: this.props.followed_id,
-          following: false
+    }
+
+    // FIXME: this is not really a React way. Maybe create an Overlay and
+    // TriggerOverlayButton components?
+    openOverlay(event) {
+        event.preventDefault();
+        $('[data-behavior="overlay"]').addClass('open');
+    }
+
+    handleFollowClick(event) {
+        $.ajax({
+            url: `/api/relationships?followed_id=${this.props.followed_id}`,
+            method: 'POST',
+            success: (data) => {
+                this.setState({
+                    following: true
+                });
+
+                if (this.props.onFollowerCountChange) {
+                    this.props.onFollowerCountChange(data.followerCount);
+                }
+                PubSub.publish('UserFollowButton:onClick', {
+                    followed_id: this.props.followed_id,
+                    following: true
+                });
+            }
         });
-      }
-    });
-  }
+
+    }
+
+    handleUnfollowClick(event) {
+        $.ajax({
+            url: `/api/relationships?followed_id=${this.props.followed_id}`,
+            method: 'DELETE',
+            success: (data) => {
+                this.setState({
+                    following: false
+                });
+
+                if (this.props.onFollowerCountChange) {
+                    this.props.onFollowerCountChange(data.followerCount);
+                }
+                PubSub.publish('UserFollowButton:onClick', {
+                    followed_id: this.props.followed_id,
+                    following: false
+                });
+            }
+        });
+    }
 
 }
 
 UserFollowButton.propTypes = {
-  following: React.PropTypes.bool
+    following: React.PropTypes.bool
 };

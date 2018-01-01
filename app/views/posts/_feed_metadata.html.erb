@@ -3,14 +3,15 @@
     <%= icon('tag') %> <%= link_to post.tag.name, post.tag %>
   </div>
 <% elsif post.recommended? %>
-<div class="feed-metadata">
-  <%= [t('headings.recommended_by'), link_to(post.recommender.username, post.recommender)].join(' ') %>
-  <% if (post.likes_count > 2) %>
-    <%= [t('application.and'), pluralize(post.likes.count - 1, 'other')].join(' ') %>
-  <% end %>
-</div>
+  <div class="feed-metadata">
+    <%= t('headings.recommended_by') %>
+    <%= link_to(post.recommender.username, post.recommender) %>
+    <% if (post.likes_count > 2) %>
+      <%= [t('application.and'), recommendation_wording(post.likes_count - 1)].join(' ') %>
+    <% end %>
+  </div>
 <% elsif post.featured? %>
   <div class="feed-metadata">
-    <%= [t('headings.recommended_by_staff_and'), pluralize(post.likes_count, 'other')].join(' ') %>
+    <%= [t('headings.recommended_by_staff_and'), recommendation_wording(post.likes_count)].join(' ') %>
   </div>
 <% end %>

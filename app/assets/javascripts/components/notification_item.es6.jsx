@@ -45,7 +45,7 @@ class NotificationItem extends React.Component {
         switch (this.props.action) {
             case I18n.t('application.notifications.liked_your'):
             case 'liked your':
-                return <i className="fa fa-heart-o"></i>;
+                return <i className="fa fa-thumbs-o-up"></i>;
             case I18n.t('application.notifications.started_following_you'):
             case 'started following you':
                 return <i className="fa fa-user"></i>;

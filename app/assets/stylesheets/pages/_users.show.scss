@@ -33,10 +33,20 @@ body.recommended_posts.index {
     line-height: 1.2;
     margin-top: 4px;
     color: $light-font-color;
+    .fa-book {
+      color: tomato;
+      margin-right: 6px;
+      padding-top: 5px;
+      vertical-align: top;
+
+    }
+    textarea {
+      width: 90%;
+    }
   }
   .hero-location {
     width: 85%;
-    font-size: 18px;
+    font-size: 16px;
     color: $light-font-color;
     .fa-map-marker {
       color: tomato;

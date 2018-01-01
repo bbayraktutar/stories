@@ -30,6 +30,11 @@ sv:
     new_post: Nytt inlägg
     word_count: innehåller %{words} ord
     so_far: '- än så länge!'
+    cancel_account: Avsluta mitt konto
+    response: reaktion
+    responses: reaktioner
+    other: annan
+    others: andra
     notifications:
       name: Uppdateringar
       also_commented_on_a: kommenterade även
@@ -74,11 +79,15 @@ sv:
     is_followed_by: är följd av
     followers_singular: Följare
     followers_plural: Följare
+    follow: Följ
+    unfollow: Avfölj
     sign_in_or_create_account: 'Logga in eller skapa ett konto bekvämt med följande tjänster:'
     sign_in_with_email: Eller använd din email och lösenord
     sign_in__with: Använd %{source}
     add_tags: Tagga ditt inlägg för att nå en större läsarkrets
     ready_to_publish: Är du redo att publicera ditt inlägg?
+    location_question: Staden i ditt hjärta - Var bor du?
+    tell_about_youself: Berätta för världen vem du är! (En kort presentation som kommer att synas på dina inlägg)
 
   activerecord:
     models:

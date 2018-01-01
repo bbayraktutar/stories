@@ -5,10 +5,13 @@
 
         <div class="profile-info">
           <h1 class="hero-title"><%= @user.username %></h1>
-          <p class="hero-description"><%= f.text_area :description, rows: 3, autofocus: true, placeholder: "Tell the world about yourself!" %></p>
+
+          <p class="hero-description">
+            <%= icon('book') %>
+            <%= f.text_area :description, rows: 5, cols: 15, autofocus: true, placeholder: t('headings.tell_about_youself') %></p>
           <div class="hero-location">
             <%= icon('map-marker') %>
-            <%= f.text_field :location, id: 'autocomplete', onFocus: 'geolocate()', placeholder: 'Where do you live?' %>
+            <%= f.text_field :location, id: 'autocomplete', onFocus: 'geolocate()', placeholder: t('headings.location_question') %>
           </div>
         </div>
 
