@@ -76,6 +76,8 @@
 nav.navbar #logo {
   margin-top: -5px !important;
   position: relative;
+  color: #00ab6b;
+  font-size: 2.5rem;
 }
 
 html, body, #heroimage{
@@ -88,8 +90,8 @@ html, body, #heroimage{
   background-size:cover;
   .title {
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 15%;
+    left: 9%;
     width: 80%;
   }
   h1, h2, p {

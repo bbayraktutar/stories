@@ -87,7 +87,7 @@ group :development do
   gem 'rack-mini-profiler', require: false
   gem 'annotate'
   gem 'bullet'
-  gem 'dotenv'
+  gem 'dotenv-rails'
 end
 
 group :test do
