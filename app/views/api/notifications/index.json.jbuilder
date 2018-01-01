@@ -8,6 +8,8 @@ json.notifications do |json|
     json.action notification.action
 
     json.type notification.notifiable.class.to_s.underscore.humanize.downcase
+    json.type_humanized notification.notifiable_humanized
+
 
     json.url case notification.notifiable.class.to_s
             when "Post" then post_path(notification.notifiable)

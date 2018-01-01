@@ -19,7 +19,15 @@ sv:
     sign_up: Registrera konto
     remember_me: Kom ihåg mig
     publish: Publicera
+    save: Spara
+    cancel: Avbryt
     see_all: Se alla inlägg
+    notifications:
+      name: Uppdateringar
+      also_commented_on_a: kommenterade även
+      responded_to_your: reagerade på ditt
+      mark_all_as_read: Markera alla som lästa
+      started_following_you: började följa dig
     length:
       less_than_one_minute: 'läses under en minut'
       minutes_read: läses på ca %{read_time} minuter
@@ -63,12 +71,16 @@ sv:
     add_tags: Tagga ditt inlägg för att nå en större läsarkrets
 
   activerecord:
-      errors:
-        messages:
-          record_invalid: 'Ett fel uppstod: %{errors}'
-          restrict_dependent_destroy:
-            has_one: Kan inte ta bort post då beroende %{record} finns
-            has_many: Kan inte ta bort poster då beroende %{record} finns
+    models:
+      post: Inlägg
+      user: Användare
+      notification: Uppdatering
+    errors:
+      messages:
+        record_invalid: 'Ett fel uppstod: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Kan inte ta bort post då beroende %{record} finns
+          has_many: Kan inte ta bort poster då beroende %{record} finns
   date:
     abbr_day_names:
     - sön

@@ -20,10 +20,10 @@ class ResponsesController < ApplicationController
 
     def notify_author_and_responders
       (@post.responders.uniq - [current_user]).each do |user|
-        Notification.create(recipient: user, actor: current_user, action: "also commented on a", notifiable: @post, is_new: true)
+        Notification.create(recipient: user, actor: current_user, action: t('application.notifications.also_commented_on_a'), notifiable: @post, is_new: true)
       end
       unless current_user?(@post.user) || @post.responders.include?(@post.user)
-        Notification.create(recipient: @post.user, actor: current_user, action: "responded to your", notifiable: @post, is_new: true)
+        Notification.create(recipient: @post.user, actor: current_user, action: t('application.notifications.responded_to_your'), notifiable: @post, is_new: true)
       end
     end
 end

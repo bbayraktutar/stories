@@ -8,6 +8,6 @@
       <%= f.text_area :body, class: "medium-editable response-body", id: 'editor-body' %>
     </div>
     <%= f.submit t('application.publish'), class: 'button green-inner-button' %>
-    <button class='button green-border-button cancel-button' data-behavior="editor-cancel">Cancel</button>
+    <button class='button green-border-button cancel-button' data-behavior="editor-cancel"><%=  t('application.cancel') %></button>
   <% end %>
 </div>
