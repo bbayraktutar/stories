@@ -4,14 +4,6 @@
   <title>Stories</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
-  <script type="text/javascript">
-      I18n.defaultLocale = "<%= I18n.default_locale %>";
-      I18n.locale = "<%= I18n.locale %>";
-      I18n.fallbacks = true;
-      I18n.locales["sv"] = function(locale) {
-          return ["sv", "en"]
-      }
-  </script>
   <%= csrf_meta_tags %>
 
   <%= favicon_link_tag 'favicon.png', type: 'image/png' %>
@@ -29,6 +21,7 @@
     <%= render 'layouts/admin_header' %>
   <% else %>
     <%= render 'layouts/header' %>
+    <%= render 'layouts/hero_image' if current_page?('/') %>
   <% end %>
   <%= render 'layouts/alert_messages' %>
 
@@ -40,5 +33,11 @@
 </body>
 <script type="text/javascript">
   window.userSignedIn = <%= user_signed_in? %>;
+  I18n.defaultLocale = "<%= I18n.default_locale %>";
+  I18n.locale = "<%= I18n.locale %>";
+  I18n.fallbacks = true;
+  I18n.locales["sv"] = function(locale) {
+      return ["sv", "en"]
+  }
 </script>
 </html>

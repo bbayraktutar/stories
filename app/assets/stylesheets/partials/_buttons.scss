@@ -28,6 +28,16 @@
     background-color: $white;
     border-color: $button-green;
   }
+  &.green-cta-button {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    color: #fff;
+    font-size: 3rem;
+    background-color: $button-green;
+    border-color: $button-green;
+    border-radius: 5px;
+  }
 }
 
 .count-button-wrapper {

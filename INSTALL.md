@@ -200,6 +200,10 @@ You can now...
 - Write new posts
 - Feature tags by clicking on the “feature” button when on a tag pages
 
+## Issues and Extras
+
+### NPM in Rails
+https://ricostacruz.com/til/npm-in-rails
 
 
 

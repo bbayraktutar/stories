@@ -1,0 +1,14 @@
+<div id="heroimage">
+  <div class="title">
+    <h1>Läs mer, lär mer</h1>
+    <p>Berätta din historia och låt dig inspireras av andras berättelser.</p>
+    <% if user_signed_in? && current_page?('/') %>
+      <div data-animation="fadeInUp-fadeOutDown" style="width: 80%;">
+        <%= render 'shared/inline_editor' %>
+      </div>
+    <% else %>
+
+  </div>
+      <a class="button green-cta-button" href="#" role="button">Learn more</a>
+    <% end %>
+</div>

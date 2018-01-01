@@ -32,3 +32,4 @@ brakeman.html
 .idea/*
 
 .env
+/node_modules

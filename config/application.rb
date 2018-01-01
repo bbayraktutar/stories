@@ -28,6 +28,7 @@ module Stories
       generate.routing_specs false
       generate.controller_specs false
     end
+    config.assets.paths << Rails.root.join('node_modules')
     config.active_job.queue_adapter = :sidekiq
     config.i18n.available_locales = [:sv, :en]
     config.i18n.default_locale = :sv
