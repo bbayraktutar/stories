@@ -51,7 +51,7 @@ var Editor = {
 
     /*** Autosave ***/
     $('[data-behavior="autosave"]').autoSave(function() {
-      $('[data-behavior="editor-message"]').text('Saving...');
+      $('[data-behavior="editor-message"]').text(I18n.t('application.saving'));
       $('#post_all_tags').val(my_taggle.getTagValues());
       Editor.postAutosave($('.editor-form').attr('action'),
                    $('input[name="_method"]').val(),

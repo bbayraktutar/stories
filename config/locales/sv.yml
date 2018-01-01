@@ -7,7 +7,7 @@ sv:
     ago: sedan
     refresh: Ladda om
     and: och
-    share: DELA
+    share: DELA detta inlägg
     edit: Redigera
     delete: Ta bort
     drafts: Utkast
@@ -22,12 +22,21 @@ sv:
     save: Spara
     cancel: Avbryt
     see_all: Se alla inlägg
+    create_account: Skapa konto
+    go_full_screen: Växla till helskärn
+    saving: Sparar...
+    saved: Sparad
+    last_edited: Senast ändrad
+    new_post: Nytt inlägg
+    word_count: innehåller %{words} ord
+    so_far: '- än så länge!'
     notifications:
       name: Uppdateringar
       also_commented_on_a: kommenterade även
       responded_to_your: reagerade på ditt
       mark_all_as_read: Markera alla som lästa
       started_following_you: började följa dig
+      liked_your: gillade din
     length:
       less_than_one_minute: 'läses under en minut'
       minutes_read: läses på ca %{read_time} minuter
@@ -69,12 +78,21 @@ sv:
     sign_in_with_email: Eller använd din email och lösenord
     sign_in__with: Använd %{source}
     add_tags: Tagga ditt inlägg för att nå en större läsarkrets
+    ready_to_publish: Är du redo att publicera ditt inlägg?
 
   activerecord:
     models:
       post: Inlägg
       user: Användare
-      notification: Uppdatering
+      notification:
+        one: Uppdatering
+        other: Uppdateringar
+    attributes:
+      user:
+        username: Användarnamn
+        email: Email
+        password: Lösenord
+        password_confirmation: Lösenordsbekräftelse
     errors:
       messages:
         record_invalid: 'Ett fel uppstod: %{errors}'

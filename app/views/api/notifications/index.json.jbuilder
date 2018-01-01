@@ -4,7 +4,7 @@ json.notifications do |json|
   json.array! @notifications do |notification|
     json.id notification.id
     json.actor notification.actor.username
-    json.actor_avatar_img_tag avatar_for(notification.actor, size: 40)
+    json.actor_avatar_img_tag avatar_for(notification.actor, size: 35)
     json.action notification.action
 
     json.type notification.notifiable.class.to_s.underscore.humanize.downcase

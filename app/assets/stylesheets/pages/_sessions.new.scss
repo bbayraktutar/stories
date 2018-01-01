@@ -3,12 +3,11 @@ body.registrations.new {
   input[type="text"],
   input[type="password"],
   input[type="email"] {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 100;
-    width: 100%;
-    border: none;
+    width: 80%;
     outline: none;
-    background-color: rgb(250, 255, 189);
+    padding: 10px;
   }
   .form-input-wrapper {
     padding: 1.5em 0;
