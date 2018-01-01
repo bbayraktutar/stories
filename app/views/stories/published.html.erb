@@ -4,14 +4,14 @@
       <header class="hero flex-container flex-space-btw">
         <h1 class="hero-title">Your Stories</h1>
         <div class="button-set">
-          <%= link_to "Write a story", new_post_path, class: "button green-border-button" %>
+          <%= link_to t('header.write_a_story'), new_post_path, class: "button green-border-button" %>
         </div>
       </header>
 
       <nav class="nav-tabs">
         <ul>
-          <li><%= nav_link_to "Drafts", stories_drafts_path %></li>
-          <li><%= nav_link_to "Public", stories_published_path %></li>
+          <li><%= nav_link_to t('application.drafts'), stories_drafts_path %></li>
+          <li><%= nav_link_to t('application.published'), stories_published_path %></li>
         </ul>
       </nav>
 
@@ -26,15 +26,15 @@
                     <span class="glyphicon glyphicon-chevron-down"></span>
                   </button>
                   <ul class="dropdown-menu">
-                    <li><%= link_to "Edit", edit_post_path(post) %></li>
-                    <li><%= link_to "Delete", api_post_path(post), method: :delete, remote: true %></li>
+                    <li><%= link_to t('application.edit'), edit_post_path(post) %></li>
+                    <li><%= link_to t('application.delete'), api_post_path(post), method: :delete, remote: true %></li>
                   </ul>
                 </div>
               </small>
             </div>
           <% end %>
         <% else %>
-          <p class="no-sc-message">No published posts yet</p>
+          <p class="no-sc-message"><%= t('headings.no_published_stories') %></p>
         <% end %>
       </div>
     </div>

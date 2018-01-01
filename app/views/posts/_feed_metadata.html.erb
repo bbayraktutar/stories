@@ -4,13 +4,13 @@
   </div>
 <% elsif post.recommended? %>
 <div class="feed-metadata">
-  Recommended by <%= link_to post.recommender.username, post.recommender %>
+  <%= [t('headings.recommended_by'), link_to(post.recommender.username, post.recommender)].join(' ') %>
   <% if (post.likes_count > 2) %>
-    and <%= pluralize(post.likes.count - 1, 'other') %>
+    <%= [t('application.and'), pluralize(post.likes.count - 1, 'other')].join(' ') %>
   <% end %>
 </div>
 <% elsif post.featured? %>
   <div class="feed-metadata">
-    Featured by Stories Staff and recommended by <%= pluralize(post.likes_count, 'other') %>
+    <%= [t('headings.recommended_by_staff_and'), pluralize(post.likes_count, 'other')].join(' ') %>
   </div>
 <% end %>

@@ -2,8 +2,19 @@ sv:
   application:
     name: Torgny
     dashboard: 'Översikt'
+    daily_digest: Dagens tips
     search: 'Sök'
     ago: sedan
+    refresh: Ladda om
+    and: och
+    share: DELA
+    edit: Redigera
+    delete: Ta bort
+    drafts: Utkast
+    published: Publicerade inlägg
+    profile: Profil
+    sign_out: Logga ut
+    see_all: Se alla inlägg
     length:
       less_than_one_minute: 'läses under en minut'
       minutes_read: läses på ca %{read_time} minuter
@@ -11,7 +22,8 @@ sv:
     home: Hem
     top_stories: Mest lästa
     bookmarks: Sparade inlägg
-    write_a_story: Berätta din historia
+    write_a_story: Nytt inlägg
+    tell_your_story: Berätta...
     sign_in_up: Logga in / Registrera dig
   headings:
     tagged_in: Tag
@@ -19,6 +31,27 @@ sv:
     tags_you_follow: Taggar du följer
     related_tags: Relaterade taggar
     people_interested_in: Medlemmar interesserade av
+    people_to_follow: Medlemmar att följa
+    you_follow_everybody: Du följer alla medlemmar
+    read_more: Läs mer %{suffix}
+    featured_tags: Rekommenderade taggar
+    recommended_by: Rekommenderad av
+    recommended_by_2: Rekommenderade inlägg av
+    recommended_by_staff_and: Rekommenderad av redaktionen och av
+    recommended_by_staff: Readaktionen
+    responses: Reaktioner / Kommentarer
+    related_posts: Relaterade inlägg
+    no_published_stories: Inga publiceade inlägg ännu...
+    reaction_comment: 'Skriv en kommentar...'
+    drafts_and_stories: Utkast och inlägg
+    interests: Intressen
+    latest: Senaste
+    following: Följer
+    is_following: följer
+    is_followed_by: är följd av
+    followers_singular: Följare
+    followers_plural: Följare
+
   activerecord:
       errors:
         messages:

@@ -25,7 +25,7 @@ class FollowSuggestionsContainer extends React.Component {
       method: 'GET', 
       dataType: 'json',
       success: (data) => {
-        const newActives = data.slice(0, 3)
+        const newActives = data.slice(0, 3);
         this.setState({ 
           activeUsers: newActives,
           users: [ ...data.slice(3), ...newActives ]
@@ -38,8 +38,8 @@ class FollowSuggestionsContainer extends React.Component {
     return (
       <div className="follow-suggestions-container border-top">
         <div className="suggestions-header">
-          <h4 className="small-heading">People to follow</h4>
-          <a className="refresh-link pull-right" onClick={this.refreshActiveUsers.bind(this)}>Refresh</a>
+          <h4 className="small-heading">{I18n.t('headings.people_to_follow')}</h4>
+          <a className="refresh-link pull-right" onClick={this.refreshActiveUsers.bind(this)}>{I18n.t('application.refresh')}</a>
         </div>
         <div>
           {this.renderSuggestions()}
@@ -50,7 +50,7 @@ class FollowSuggestionsContainer extends React.Component {
 
   renderSuggestions() {
     if (this.state.users.length === 0) {
-      return <h5>You are following all users!</h5>
+      return <h5>{I18n.t('headings.you_follow_everybody')}</h5>
     }
     return this.state.activeUsers.map(user => {
       return (
