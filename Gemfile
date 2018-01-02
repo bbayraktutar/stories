@@ -47,10 +47,10 @@ gem 'sdoc', group: :doc
 gem 'will_paginate'
 
 # Elasticsearch
-gem 'elasticsearch', '1.0.15'
-gem 'elasticsearch-transport', '1.0.15'
-gem 'elasticsearch-model', '~> 0.1.8'
-gem 'elasticsearch-rails', '~> 0.1.8'
+gem 'elasticsearch'
+gem 'elasticsearch-transport'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 # Background Job
 gem 'sidekiq'
