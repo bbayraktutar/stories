@@ -13,12 +13,10 @@
 <body class="<%= controller.controller_name %> <%= controller.action_name %>">
 <%= render 'layouts/overlay' unless user_signed_in? %>
 <div data-behavior="progress-bar" class="progress-bar"></div>
-<%= render 'layouts/simple_header' %>
+<%= render 'layouts/header' %>
 <%= render 'layouts/alert_messages' %>
-<%= render 'layouts/hero_image' if current_page?('/') %>
 
-
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 40px;">
   <%= yield %>
   <%= yield :sidebar %>
 </div>

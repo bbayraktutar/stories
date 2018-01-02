@@ -21,7 +21,7 @@ sv:
     publish: Publicera
     save: Spara
     cancel: Avbryt
-    see_all: Se alla inlägg
+    see_all: Se alla...
     create_account: Skapa konto
     go_full_screen: Växla till helskärn
     saving: Sparar...
@@ -54,6 +54,8 @@ sv:
     sign_in_up: Logga in / Registrera dig
     staff_pick: Utvalda inlägg
   headings:
+    all: Allt
+    tags: Taggar
     tagged_in: Tag
     top_stories: Mest lästa
     tags_you_follow: Taggar du följer
