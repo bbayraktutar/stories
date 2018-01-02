@@ -97,9 +97,9 @@ sv:
 
   activerecord:
     models:
-      post: Inlägg
+      post: inlägg
       user: Användare
-      response: Reaktion
+      response: reaktion/kommentar
       notification:
         one: Uppdatering
         other: Uppdateringar
