@@ -10,16 +10,16 @@ module SearchablePost
 
     settings INDEX_OPTIONS do
       mappings dynamic: 'false' do
-        indexes :title, analyzer: 'autocomplete', type: :string
-        indexes :body, type: :string, analyzer: 'english'
+        indexes :title, analyzer: 'autocomplete', type: :text
+        indexes :body, type: :text, analyzer: 'english'
         indexes :published_at, type: :date
-        indexes :slug, type: :string, analyzer: :keyword
+        indexes :slug, type: :text, analyzer: :keyword
         indexes :tags do
-          indexes :name, type: :string, analyzer: 'english'
+          indexes :name, type: :text, analyzer: 'english'
         end
         indexes :user do
-          indexes :username, type: :string, analyzer: 'english'
-          indexes :avatar_url, type: :string
+          indexes :username, type: :text, analyzer: 'english'
+          indexes :avatar_url, type: :text
         end
       end
     end

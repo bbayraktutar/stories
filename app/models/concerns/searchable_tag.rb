@@ -10,8 +10,8 @@ module SearchableTag
 
     settings INDEX_OPTIONS do
       mappings dynamic: 'false' do
-        indexes :name, analyzer: 'autocomplete', type: :string
-        indexes :slug, type: :string, analyzer: :keyword
+        indexes :name, analyzer: 'autocomplete', type: :text
+        indexes :slug, type: :text, analyzer: :keyword
       end
     end
 
