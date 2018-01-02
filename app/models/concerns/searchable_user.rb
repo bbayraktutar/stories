@@ -10,10 +10,10 @@ module SearchableUser
 
     settings INDEX_OPTIONS do
       mappings dynamic: 'false' do
-        indexes :username, analyzer: 'autocomplete'
-        indexes :email
-        indexes :avatar_url
-        indexes :slug
+        indexes :username, type: :string, analyzer: 'autocomplete'
+        indexes :email, type: :string, analyzer: :keyword
+        indexes :avatar_url, type: :string, analyzer: :keyword
+        indexes :slug, type: :string, analyzer: :keyword
       end
     end
 
