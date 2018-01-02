@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="Stories">
+<html>
 <head>
-  <title>Stories</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title><%= t('application.name') %></title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 
   <%= favicon_link_tag 'favicon.png', type: 'image/png' %>
@@ -21,6 +21,7 @@
     <%= render 'layouts/admin_header' %>
   <% else %>
     <%= render 'layouts/header' %>
+    <%= render 'layouts/hero_image' if current_page?('/') %>
   <% end %>
   <%= render 'layouts/alert_messages' %>
 
@@ -32,5 +33,11 @@
 </body>
 <script type="text/javascript">
   window.userSignedIn = <%= user_signed_in? %>;
+  I18n.defaultLocale = "<%= I18n.default_locale %>";
+  I18n.locale = "<%= I18n.locale %>";
+  I18n.fallbacks = true;
+  I18n.locales["sv"] = function(locale) {
+      return ["sv", "en"]
+  }
 </script>
 </html>

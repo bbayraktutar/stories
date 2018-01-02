@@ -42,8 +42,8 @@ RSpec.describe User, type: :model do
   end
 
   describe "relationships between users" do
-    let(:luke) { create(:user, username: "Luke Skywalker") }
-    let(:solo) { create(:user, username: "Han Solo") }
+    let(:luke) {create(:user, username: "Luke Skywalker")}
+    let(:solo) {create(:user, username: "Han Solo")}
 
     it "can follow and unfollow other users" do
       expect(luke).not_to be_following(solo)
@@ -62,14 +62,14 @@ RSpec.describe User, type: :model do
     end
 
     it "does not allow to follow self" do
-      expect { luke.follow(luke) }.not_to change { Relationship.count }
+      expect {luke.follow(luke)}.not_to change {Relationship.count}
       expect(luke.follow(luke)).to be_falsy
     end
   end
 
   describe "user interests" do
-    let(:user) { create(:user) }
-    let(:music_tag) { Tag.create(name: "Music") }
+    let(:user) {create(:user)}
+    let(:music_tag) {Tag.create(name: "Music")}
 
     it "can follow and unfollow a tag" do
       expect(user).not_to be_following_tag(music_tag)
@@ -83,9 +83,9 @@ RSpec.describe User, type: :model do
   end
 
   describe "adding likes" do
-    let(:user) { create(:user) }
-    let(:post) { create(:post) }
-    let(:response) { build(:response) }
+    let(:user) {create(:user)}
+    let(:post) {create(:post)}
+    let(:response) {build(:response)}
     before :each do
       post.responses << response
     end
@@ -108,9 +108,9 @@ RSpec.describe User, type: :model do
   end
 
   describe "adding bookmarks" do
-    let(:user) { create(:user) }
-    let(:post) { create(:post) }
-    let(:response) { build(:response) }
+    let(:user) {create(:user)}
+    let(:post) {create(:post)}
+    let(:response) {build(:response)}
     before :each do
       post.responses << response
     end
@@ -135,7 +135,7 @@ RSpec.describe User, type: :model do
   # TODO: this is a temporary implemention, change this when the number of user
   # grows.
   describe "#people_to_folow" do
-    let(:user) { create(:user) }
+    let(:user) {create(:user)}
 
     it "gets upto 25 users not including self"
   end

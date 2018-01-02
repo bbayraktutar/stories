@@ -1,0 +1,315 @@
+sv:
+  application:
+    name: Torgny
+    dashboard: 'Översikt'
+    daily_digest: Dagens tips
+    search: 'Sök'
+    ago: sedan
+    refresh: Ladda om
+    and: och
+    share: DELA detta inlägg
+    edit: Redigera
+    delete: Ta bort
+    drafts: Utkast
+    published: Publicerade inlägg
+    is_published: Publicerad
+    profile: Profil
+    sign_out: Logga ut
+    sign_in: Logga in
+    sign_up: Registrera konto
+    remember_me: Kom ihåg mig
+    publish: Publicera
+    save: Spara
+    cancel: Avbryt
+    see_all: Se alla inlägg
+    create_account: Skapa konto
+    go_full_screen: Växla till helskärn
+    saving: Sparar...
+    saved: Sparad
+    last_edited: Senast ändrad
+    new_post: Nytt inlägg
+    word_count: innehåller %{words} ord
+    so_far: '- än så länge!'
+    cancel_account: Avsluta mitt konto
+    response: reaktion
+    responses: reaktioner
+    other: annan
+    others: andra
+    notifications:
+      name: Uppdateringar
+      also_commented_on_a: kommenterade även
+      responded_to_your: reagerade på ditt
+      mark_all_as_read: Markera alla som lästa
+      started_following_you: började följa dig
+      liked_your: gillade din
+    length:
+      less_than_one_minute: 'läses under en minut'
+      minutes_read: läses på ca %{read_time} minuter
+  header:
+    home: Hem
+    top_stories: Mest lästa
+    bookmarks: Sparade inlägg
+    write_a_story: Nytt inlägg
+    tell_your_story: Berätta en historia...
+    sign_in_up: Logga in / Registrera dig
+    staff_pick: Utvalda inlägg
+  headings:
+    tagged_in: Tag
+    top_stories: Mest lästa
+    tags_you_follow: Taggar du följer
+    related_tags: Relaterade taggar
+    people_interested_in: Medlemmar interesserade av
+    people_to_follow: Medlemmar att följa
+    you_follow_everybody: Du följer alla medlemmar
+    read_more: Läs mer %{suffix}
+    featured_tags: Rekommenderade taggar
+    recommended_by: Rekommenderad av
+    recommended_by_2: Rekommenderade inlägg av
+    recommended_by_staff_and: Rekommenderad av redaktionen och av
+    recommended_by_staff: Readaktionen
+    responses: Reaktioner / Kommentarer
+    related_posts: Relaterade inlägg
+    no_published_stories: Inga publiceade inlägg ännu...
+    reaction_comment: 'Skriv en kommentar...'
+    drafts_and_stories: Utkast och inlägg
+    interests: Intressen
+    latest: Senaste
+    following: Följer
+    is_following: följer
+    is_followed_by: är följd av
+    followers_singular: Följare
+    followers_plural: Följare
+    follow: Följ
+    unfollow: Avfölj
+    sign_in_or_create_account: 'Logga in eller skapa ett konto bekvämt med följande tjänster:'
+    sign_in_with_email: Eller använd din email och lösenord
+    sign_in__with: Använd %{source}
+    add_tags: Tagga ditt inlägg för att nå en större läsarkrets
+    ready_to_publish: Är du redo att publicera ditt inlägg?
+    location_question: Staden i ditt hjärta - Var bor du?
+    tell_about_youself: Berätta för världen vem du är! (En kort presentation som kommer att synas på dina inlägg)
+    published_success: Ditt inlägg har publicerats
+    update_success: Ditt inlägg har uppdaterats
+    delete_success: Ditt inlägg har raderats
+    create_error: Kunde inte skapa inlägget. Var god försök igen.
+    update_error: Kunde inte uppdatera inlägget. Var god försök igen
+
+
+  activerecord:
+    models:
+      post: inlägg
+      user: Användare
+      response: reaktion/kommentar
+      notification:
+        one: Uppdatering
+        other: Uppdateringar
+    attributes:
+      user:
+        username: Användarnamn
+        email: Email
+        password: Lösenord
+        password_confirmation: Lösenordsbekräftelse
+    errors:
+      messages:
+        record_invalid: 'Ett fel uppstod: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Kan inte ta bort post då beroende %{record} finns
+          has_many: Kan inte ta bort poster då beroende %{record} finns
+  date:
+    abbr_day_names:
+    - sön
+    - mån
+    - tis
+    - ons
+    - tor
+    - fre
+    - lör
+    abbr_month_names:
+    -
+    - jan
+    - feb
+    - mar
+    - apr
+    - maj
+    - jun
+    - jul
+    - aug
+    - sep
+    - okt
+    - nov
+    - dec
+    day_names:
+    - söndag
+    - måndag
+    - tisdag
+    - onsdag
+    - torsdag
+    - fredag
+    - lördag
+    formats:
+      default: "%Y-%m-%d"
+      long: "%e %B %Y"
+      short: "%e %b"
+    month_names:
+    -
+    - januari
+    - februari
+    - mars
+    - april
+    - maj
+    - juni
+    - juli
+    - augusti
+    - september
+    - oktober
+    - november
+    - december
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: ungefär en timme
+        other: ungefär %{count} timmar
+      about_x_months:
+        one: ungefär en månad
+        other: ungefär %{count} månader
+      about_x_years:
+        one: ungefär ett år
+        other: ungefär %{count} år
+      almost_x_years:
+        one: nästan ett år
+        other: nästan %{count} år
+      half_a_minute: en halv minut
+      less_than_x_minutes:
+        one: mindre än en minut
+        other: mindre än %{count} minuter
+      less_than_x_seconds:
+        one: mindre än en sekund
+        other: mindre än %{count} sekunder
+      over_x_years:
+        one: mer än ett år
+        other: mer än %{count} år
+      x_days:
+        one: en dag
+        other: "%{count} dagar"
+      x_minutes:
+        one: en minut
+        other: "%{count} minuter"
+      x_months:
+        one: en månad
+        other: "%{count} månader"
+      x_years:
+        one: ett år
+        other: "%{count} år"
+      x_seconds:
+        one: en sekund
+        other: "%{count} sekunder"
+    prompts:
+      day: Dag
+      hour: Timme
+      minute: Minut
+      month: Månad
+      second: Sekund
+      year: År
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: måste vara accepterad
+      blank: måste anges
+      present: får inte anges
+      confirmation: stämmer inte överens
+      empty: får ej vara tom
+      equal_to: måste vara lika med %{count}
+      even: måste vara jämnt
+      exclusion: är reserverat
+      greater_than: måste vara större än %{count}
+      greater_than_or_equal_to: måste vara större än eller lika med %{count}
+      inclusion: finns inte i listan
+      invalid: har fel format
+      less_than: måste vara mindre än %{count}
+      less_than_or_equal_to: måste vara mindre än eller lika med %{count}
+      model_invalid: "Validering misslyckades: %{errors}"
+      not_a_number: är inte ett nummer
+      not_an_integer: måste vara ett heltal
+      odd: måste vara udda
+      required: måste finnas
+      taken: används redan
+      too_long: är för lång (maximum är %{count} tecken)
+      too_short: är för kort (minimum är %{count} tecken)
+      wrong_length: har fel längd (ska vara %{count} tecken)
+      other_than: måste vara annat än %{count}
+    template:
+      body: 'Det var problem med följande fält:'
+      header:
+        one: Ett fel förhindrade denna %{model} från att sparas
+        other: "%{count} fel förhindrade denna %{model} från att sparas"
+  helpers:
+    select:
+      prompt: Välj
+    submit:
+      create: Skapa %{model}
+      submit: Spara %{model}
+      update: Ändra %{model}
+  number:
+    currency:
+      format:
+        delimiter: ' '
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: kr
+    format:
+      delimiter: ' '
+      precision: 2
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Miljard
+          million: Miljon
+          quadrillion: Biljard
+          thousand: Tusen
+          trillion: Biljon
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " och "
+      two_words_connector: " och "
+      words_connector: ", "
+  time:
+    am: ''
+    formats:
+      default: "%a, %e %b %Y %H:%M:%S %z"
+      long: "%e %B %Y %H:%M"
+      short: "%e %b %H:%M"
+    pm: ''

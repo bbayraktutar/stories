@@ -71,3 +71,42 @@
 @import 'vendor/medium-editor-insert-plugin-frontend';
 @import 'vendor/flat';
 @import 'vendor/taggle';
+
+
+nav.navbar #logo {
+  margin-top: -5px !important;
+  position: relative;
+  color: #00ab6b;
+  font-size: 2.5rem;
+}
+
+html, body, #heroimage{
+  width:100%;
+  height:85%;
+  z-index: 1;
+}
+
+#heroimage{
+  background:url('https://www.pardot.com/content/uploads/2016/04/header-newfeature.jpg') center center;
+  background-size:cover;
+  .title {
+    position: relative;
+    top: 15%;
+    left: 9%;
+    width: 80%;
+    height: 80%;
+    z-index: 999;
+  }
+  .lead-heading, .lead-paragraph {
+    color: #ffffff;
+    opacity: 0.8;
+  }
+  .lead-heading {
+    font-weight: bold;
+    font-size: 7rem;
+  }
+  .lead-paragraph {
+    font-weight: normal;
+    font-size: 4rem;
+  }
+}

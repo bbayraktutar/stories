@@ -14,7 +14,7 @@ module ApplicationHelper
     if user_signed_in?
       react_component('TagFollowButton', { following: current_user.following_tag?(tag), tag_id: tag.id })
     else
-      link_to "Follow", "", class: 'pull-right button green-border-button follow-button', data: { behavior: 'trigger-overlay' }
+      link_to t('headings.follow'), '', class: 'pull-right button green-border-button follow-button', data: { behavior: 'trigger-overlay' }
     end
   end
 
@@ -39,6 +39,16 @@ module ApplicationHelper
     options[:class] += " active" if current_page?(url)
     options[:class].strip!
     link_to text, url, options
+  end
+
+  def response_count(count)
+    suffix = count == 1 ? t('application.response') : t('application.responses')
+    [count, suffix].join(' ')
+  end
+
+  def recommendation_wording(count)
+    suffix = count == 1 ? t('application.other') : t('application.others')
+    [count, suffix].join(' ')
   end
 
 end

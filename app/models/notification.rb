@@ -22,4 +22,8 @@ class Notification < ActiveRecord::Base
   scope :pristine, -> { where(is_new: true) }
   scope :recent, -> { order(created_at: :desc) }
   scope :unread, -> { where(read_at: nil) }
+
+  def notifiable_humanized
+    self.notifiable.model_name.human
+  end
 end

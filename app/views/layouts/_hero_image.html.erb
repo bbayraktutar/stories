@@ -1,0 +1,17 @@
+<div id="heroimage"  data-animation="fadeInUp-fadeOutDown">
+  <div class="title" data-animation="fadeInUp-fadeOutDown">
+    <% if user_signed_in? && current_page?('/') %>
+      <h1 class="lead-heading">Välkommen <%= current_user.username %></h1>
+      <p class="lead-paragraph">Berätta om det som inspirerar dig. <br/>Låt dig inspireras av andras berättelser.</p>
+
+      <div data-animation="fadeInUp-fadeOutDown" style="width: 80%; z-index: 999;">
+        <%= render 'shared/inline_editor' %>
+      </div>
+    <% else %>
+      <h1 class="lead-heading">Läs mer - Skriv mer - Lär mer</h1>
+      <p class="lead-paragraph">Berätta om det som inspirerar dig. <br/>Låt dig inspireras av andras berättelser.</p>
+      <%= link_to t('header.sign_in_up'), new_user_session_path, class: 'button green-cta-button', data: {behavior: 'trigger-overlay'} %>
+    <% end %>
+  </div>
+
+</div>

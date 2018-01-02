@@ -1,11 +1,12 @@
 <nav class="navbar navbar-inverse navbar-fixed-top navbar-admin">
   <div class="container-fluid col-md-10 col-md-offset-1">
     <div class="navbar-header">
-      <%= image_tag('stories-logo.svg', height: 40, alt: "Stories") %>
+      <%#= image_tag('stories-logo.svg', height: 40, alt: "Stories") %>
+      <%= t('application.name') %>
     </div>
     <ul class="nav navbar-nav filter-links">
       <li>
-        <%= nav_link_to "Dashboard", admin_dashboard_path %>
+        <%= nav_link_to t('application.dashboard'), admin_dashboard_path %>
       </li>
       <li>
         <a href="/sidekiq">Sidekiq</a>

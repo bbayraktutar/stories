@@ -27,3 +27,9 @@ rails_best_practices_output.html
 .byebug_history
 .rspec
 brakeman.html
+
+.idea/
+.idea/*
+
+.env
+/node_modules

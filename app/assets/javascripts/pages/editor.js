@@ -7,7 +7,7 @@ var Editor = {
 
     var editor = new MediumEditor('.medium-editable', {
       placeholder: {
-        text: "Tell your Story ..."
+        text: I18n.t('header.tell_your_story')
       }
     });
 
@@ -29,7 +29,7 @@ var Editor = {
 
     // preload tags if its edit.
     var tag_string = $('[data-behavior="tags"]').data("tags");
-    var tags = tag_string.length > 0 ? tag_string.split(', ') : ['Story', 'Music'];
+    var tags = tag_string.length > 0 ? tag_string.split(', ') : ['Berättelse', 'Personligt'];
 
     var my_taggle = new Taggle('js-taggle', {
       duplicateTagClass: 'bounce',
@@ -51,7 +51,7 @@ var Editor = {
 
     /*** Autosave ***/
     $('[data-behavior="autosave"]').autoSave(function() {
-      $('[data-behavior="editor-message"]').text('Saving...');
+      $('[data-behavior="editor-message"]').text(I18n.t('application.saving'));
       $('#post_all_tags').val(my_taggle.getTagValues());
       Editor.postAutosave($('.editor-form').attr('action'),
                    $('input[name="_method"]').val(),

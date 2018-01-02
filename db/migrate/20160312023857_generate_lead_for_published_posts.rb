@@ -1,4 +1,4 @@
-class GenerateLeadForPublishedPosts < ActiveRecord::Migration
+class GenerateLeadForPublishedPosts < ActiveRecord::Migration[5.1]
 
   def change
     reversible do |dir|

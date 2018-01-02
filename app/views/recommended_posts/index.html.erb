@@ -11,7 +11,7 @@
     </header>
     <div class="following-metadata">
       <span class="following-count"><b><%= @user.following.size %></b> Following</span>
-      <span class="follower-count"><%= highlight(pluralize(@user.followers.size, "Follower"), /\d+/, highlighter: '<b>\1</b>') %>
+      <span class="follower-count"><%= highlight(pluralize(@user.followers.size, t('headings.followers_singular')), /\d+/, highlighter: '<b>\1</b>') %></span>
     </div>
 
     <% if user_signed_in? && current_user?(@user) %>
@@ -24,7 +24,7 @@
 
 
 <div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
-  <h4 class="heading-border-b">Recommended by <%= @user.username %></h4>
+  <h4 class="heading-border-b"> <%= [t('headings.recommended_by'), @user.username].join(' ')%></h4>
   <div data-behavior="endless-scroll">
     <%= render @recommended_posts %>
   </div>

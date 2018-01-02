@@ -3,10 +3,18 @@
     <header class="hero">
       <div class="profile-info">
         <h1 class="hero-title"><%= @user.username %></h1>
-        <p class="hero-description"><%= @user.description %></p>
+        <% if @user.description.present? %>
+          <div class="hero-description">
+            <p>
+              <%= icon('book') %><%= @user.description %>
+            </p>
+          </div>
+        <% end %>
         <% if @user.location.present? %>
           <div class="hero-location">
-            <%= icon('map-marker') %><%= @user.location %>
+            <p>
+              <%= icon('map-marker') %><%= @user.location %>
+            </p>
           </div>
         <% end %>
       </div>
@@ -16,32 +24,32 @@
     </header>
 
     <div>
-    <% if user_signed_in? %>
-      <%= react_component('UserFollowContainer', 
-                          { followerCount: @followers_count, 
-                            followingCount: @following_count, 
-                            following: current_user.following?(@user), 
-                            followed_id: @user.id, 
-                            hideButton: current_user?(@user),
-                            username: @user.username,
-                            overlayTrigger: true },
-                          ) %>
-    <% else %>
-      <%= react_component('UserFollowContainer', 
-                          { followerCount: @user.followers.size, 
-                            followingCount: @user.following.size, 
-                            following: false, 
-                            followed_id: @user.id, 
-                            hideButton: false,
-                            username: @user.username,
-                            overlayTrigger: true },
-                          ) %>
+      <% if user_signed_in? %>
+        <%= react_component('UserFollowContainer',
+                            {followerCount: @followers_count,
+                             followingCount: @following_count,
+                             following: current_user.following?(@user),
+                             followed_id: @user.id,
+                             hideButton: current_user?(@user),
+                             username: @user.username,
+                             overlayTrigger: true},
+                            ) %>
+      <% else %>
+        <%= react_component('UserFollowContainer',
+                            {followerCount: @user.followers.size,
+                             followingCount: @user.following.size,
+                             following: false,
+                             followed_id: @user.id,
+                             hideButton: false,
+                             username: @user.username,
+                             overlayTrigger: true},
+                            ) %>
 
-    <% end %>
+      <% end %>
 
-    <% if user_signed_in? && current_user?(@user) %>
-      <%= link_to "Edit", edit_user_path(@user), class: 'button green-border-button pull-right edit-button' %>
-    <% end %>
+      <% if user_signed_in? && current_user?(@user) %>
+        <%= link_to t('application.edit'), edit_user_path(@user), class: 'button green-border-button pull-right edit-button' %>
+      <% end %>
 
     </div>
   </div>
@@ -50,19 +58,19 @@
 
 <div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
   <div class="flex-container border-top">
-    <h4 class="small-heading">Interests</h4>
+    <h4 class="small-heading"><%= t('headings.interests') %></h4>
     <% if user_signed_in? && current_user?(@user) %>
       <%= react_component('AddTagButton') %>
     <% end %>
   </div>
   <% if user_signed_in? && current_user?(@user) %>
-    <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
+    <%= react_component('FollowingTagList', {followingTags: current_user.following_tags}) %>
   <% else %>
-    <%= react_component('TagList', { tags: @user.following_tags }, { prerender: true }) %>
+    <%= react_component('TagList', {tags: @user.following_tags}, {prerender: true}) %>
   <% end %>
 
   <% if @latest_posts.any? %>
-    <h4 class="small-heading border-top">latest</h4>
+    <h4 class="small-heading border-top"><%= t('headings.latest') %></h4>
     <%= render @latest_posts %>
   <% end %>
 </div>
@@ -71,15 +79,15 @@
 <% if @recommended_posts.any? %>
   <div class="banner-container" data-animation="fadeInUp-fadeOutDown">
     <div class="posts-wrapper">
-      <h4 class="heading-border-b">Recommended by <%= @user.username %> &#149; 
-        <%= link_to "See all", user_recommended_posts_path(@user) %>
+      <h4 class="heading-border-b"><%= [t('headings.recommended_by_2'), @user.username].join(' ') %> &#149;
+        <%= link_to t('application.see_all'), user_recommended_posts_path(@user) %>
       </h4>
       <div class="flex-container f-wrap">
         <% @recommended_posts.each do |post| %>
-        <div class="recommended-post-card">
-          <%= link_to post.title, post, class: "rpc-title" %><br/>
-          <small class="rpc-username"><%= post.username %></small>
-        </div>
+          <div class="recommended-post-card">
+            <%= link_to post.title, post, class: 'rpc-title' %><br/>
+            <small class="rpc-username"><%= post.username %></small>
+          </div>
         <% end %>
       </div>
     </div>

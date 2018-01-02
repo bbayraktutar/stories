@@ -17,7 +17,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require i18n
+//= require i18n/translations
 //= require medium-editor
 //= require handlebars
 //= require jquery-sortable
@@ -34,3 +35,5 @@
 //= require components
 //= require init
 //= require page_specific
+
+
