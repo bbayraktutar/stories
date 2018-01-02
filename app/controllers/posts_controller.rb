@@ -23,10 +23,10 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.publish
-      redirect_to @post, notice: "Successfully published the post!"
+      redirect_to @post, notice: t('headings.published_success')
     else
       @post.unpublish
-      flash.now[:alert] = "Could not update the post, Please try again"
+      flash.now[:alert] = t('headings.create_error')
       render :new
     end
   end
@@ -37,17 +37,17 @@ class PostsController < ApplicationController
   def update
     @post.assign_attributes(post_params)
     if @post.publish
-      redirect_to @post, notice: "Successfully published the post!"
+      redirect_to @post, notice: t('headings.update_success')
     else
       @post.unpublish
-      flash.now[:alert] = "Could not update the post, Please try again"
+      flash.now[:alert] = t('headings.update_error')
       render :edit
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to root_url, notice: "Successfully deleted the post"
+    redirect_to root_url, notice: t('headings.delete_success')
   end
 
   # TODO: ideally move this to a separate controller?

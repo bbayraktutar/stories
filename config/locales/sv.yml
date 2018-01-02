@@ -88,11 +88,18 @@ sv:
     ready_to_publish: Är du redo att publicera ditt inlägg?
     location_question: Staden i ditt hjärta - Var bor du?
     tell_about_youself: Berätta för världen vem du är! (En kort presentation som kommer att synas på dina inlägg)
+    published_success: Ditt inlägg har publicerats
+    update_success: Ditt inlägg har uppdaterats
+    delete_success: Ditt inlägg har raderats
+    create_error: Kunde inte skapa inlägget. Var god försök igen.
+    update_error: Kunde inte uppdatera inlägget. Var god försök igen
+
 
   activerecord:
     models:
       post: Inlägg
       user: Användare
+      response: Reaktion
       notification:
         one: Uppdatering
         other: Uppdateringar
