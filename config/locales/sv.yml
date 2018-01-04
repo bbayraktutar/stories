@@ -98,6 +98,7 @@ sv:
     your_stories: Dina inlägg
     untitled: Utan titel
     add_tag: Lägg till intresse
+    title: Titel
 
   activerecord:
     models:
