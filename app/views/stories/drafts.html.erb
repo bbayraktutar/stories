@@ -19,7 +19,7 @@
         <% if @drafts.any? %>
           <% @drafts.each do |draft| %>
             <div class="story-card" id="story_<%= draft.id %>">
-              <strong class="sc-title"><%= link_to (draft.title || "Untitled"), edit_post_path(draft) %></strong>
+              <strong class="sc-title"><%= link_to (draft.title || t('headings.untitled')), edit_post_path(draft) %></strong>
               <small class="sc-metadata">
                 <strong>
                   <%= [t('application.last_edited'), time_ago_in_words(draft.updated_at), t('application.ago')].join(' ') %> &#149;
