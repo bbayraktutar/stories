@@ -21,7 +21,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
 # Front-end
-gem 'react-rails', '~> 1.10'
+gem 'react-rails', '1.10.0'
 gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'font-awesome-sass'
@@ -30,7 +30,7 @@ gem 'autoprefixer-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-#gem 'turbolinks', '~> 5'
+gem 'turbolinks', '2.5.3'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'jbuilder', '~> 2.7'
 
