@@ -1,3 +1,5 @@
+import React from 'react'
+
 class TagList extends React.Component {
   render () {
     return (
