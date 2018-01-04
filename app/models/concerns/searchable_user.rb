@@ -63,12 +63,9 @@ module SearchableUser
     },
     analyzer: {
       "autocomplete" => {
-        type: "custom",
-        tokenizer: "standard",
-        filter: [
-          "lowercase",
-          "autocomplete_filter"
-        ]
+        type: 'custom',
+        tokenizer: 'standard',
+        filter: %w(lowercase autocomplete_filter)
       }
     }
   }

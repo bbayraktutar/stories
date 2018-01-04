@@ -55,16 +55,16 @@ sv:
     staff_pick: Utvalda inlägg
   headings:
     all: Allt
-    tags: Taggar
-    tagged_in: Tag
+    tags: Intressen
+    tagged_in: Intressen
     top_stories: Mest lästa
-    tags_you_follow: Taggar du följer
-    related_tags: Relaterade taggar
+    tags_you_follow: Intressen du följer
+    related_tags: Relaterade intressen
     people_interested_in: Medlemmar interesserade av
-    people_to_follow: Medlemmar att följa
+    people_to_follow: Följ medlemmar
     you_follow_everybody: Du följer alla medlemmar
     read_more: Läs mer %{suffix}
-    featured_tags: Rekommenderade taggar
+    featured_tags: Rekommenderade intressen
     recommended_by: Rekommenderad av
     recommended_by_2: Rekommenderade inlägg av
     recommended_by_staff_and: Rekommenderad av redaktionen och av
@@ -97,7 +97,7 @@ sv:
     update_error: Kunde inte uppdatera inlägget. Var god försök igen
     your_stories: Dina inlägg
     untitled: Utan titel
-
+    add_tag: Lägg till intresse
 
   activerecord:
     models:
@@ -105,7 +105,7 @@ sv:
       user: Användare
       tag:
         one: Intressetag
-        other: Intressetaggar
+        other: Intressen
       response: reaktion/kommentar
       notification:
         one: Uppdatering

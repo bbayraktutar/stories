@@ -46,20 +46,17 @@ module SearchableTag
   INDEX_OPTIONS =
       {number_of_shards: 1, analysis: {
           filter: {
-              "autocomplete_filter" => {
-                  type: "edge_ngram",
+              'autocomplete_filter' => {
+                  type: 'edge_ngram',
                   min_gram: 1,
                   max_gram: 20
               }
           },
           analyzer: {
-              "autocomplete" => {
-                  type: "custom",
-                  tokenizer: "standard",
-                  filter: [
-                      "lowercase",
-                      "autocomplete_filter"
-                  ]
+              'autocomplete' => {
+                  type: 'custom',
+                  tokenizer: 'standard',
+                  filter: %w(lowercase autocomplete_filter)
               }
           }
       }
