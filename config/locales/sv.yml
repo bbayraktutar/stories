@@ -103,6 +103,9 @@ sv:
     models:
       post: inlägg
       user: Användare
+      tag:
+        one: Intressetag
+        other: Intressetaggar
       response: reaktion/kommentar
       notification:
         one: Uppdatering

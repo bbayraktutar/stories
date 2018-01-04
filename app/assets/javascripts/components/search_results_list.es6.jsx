@@ -41,19 +41,19 @@ class SearchResultsList extends React.Component {
   renderPostHeading() {
     if (this.props.posts.length === 0) { return; }
 
-    return <li className="autocomplete-heading"><h4>Posts</h4></li>
+    return <li className="autocomplete-heading"><h4>{I18n.t('application.published')}</h4></li>
   }
 
   renderUserHeading() {
     if (this.props.users.length === 0) { return; }
 
-    return <li className="autocomplete-heading"><h4>People</h4></li>
+    return <li className="autocomplete-heading"><h4>{I18n.t('activerecord.models.user')}</h4></li>
   }
 
   renderTagHeading() {
     if (this.props.tags.length === 0) { return; }
 
-    return <li className="autocomplete-heading"><h4>Tags</h4></li>
+    return <li className="autocomplete-heading"><h4>{I18n.t('activerecord.models.tag.other')}</h4></li>
   }
 }
 
