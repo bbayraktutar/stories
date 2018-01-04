@@ -95,6 +95,7 @@ sv:
     delete_success: Ditt inlägg har raderats
     create_error: Kunde inte skapa inlägget. Var god försök igen.
     update_error: Kunde inte uppdatera inlägget. Var god försök igen
+    your_stories: Dina inlägg
 
 
   activerecord:
