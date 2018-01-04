@@ -21,8 +21,8 @@ class TagFollowButton extends React.Component {
                     className="pull-right button green-inner-button unfollow-button"
                     rel="nofollow"
                 >
-                    <span className="top content">Following</span><br/>
-                    <span className="bottom content">Unfollow</span>
+                    <span className="top content"> {I18n.t('headings.following')} </span><br/>
+                    <span className="bottom content">{I18n.t('headings.unfollow')}</span>
                 </button>
             );
         } else {

@@ -10,51 +10,42 @@ module SearchablePost
 
     settings INDEX_OPTIONS do
       mappings dynamic: 'false' do
-        indexes :title, analyzer: 'autocomplete'
-        indexes :body, analyzer: 'english'
-        indexes :published_at
-        indexes :slug
+        indexes :title, analyzer: 'autocomplete', type: :text
+        indexes :body, type: :text, analyzer: 'swedish'
+        indexes :published_at, type: :date
+        indexes :slug, type: :text, analyzer: :keyword
         indexes :tags do
-          indexes :name, analyzer: 'english'
+          indexes :name, type: :text, analyzer: 'swedish'
         end
         indexes :user do
-          indexes :username, analyzer: 'english'
-          indexes :avatar_url
+          indexes :username, type: :text, analyzer: 'swedish'
+          indexes :avatar_url, type: :text
         end
       end
     end
 
     def self.search(term)
       __elasticsearch__.search(
-        {
-          query: {
-            filtered: {
+          {
               query: {
-                multi_match: {
-                  query: term,
-                  fields: ['title^10', 'body', 'user.username', 'tags.name^10']
-                }
-              },
-              filter: {
-                exists: {
-                  field: "published_at"
-                }
+                  multi_match: {
+                      query: term,
+                      fields: %w(title^10 body user.username tags.name^10)
+                  }
               }
-            }
           }
-        }
       )
     end
   end
 
   def as_indexed_json(options = {})
     self.as_json({
-      only: [:title, :body, :published_at, :slug],
-      include: {
-        user: {methods: [:avatar_url], only: [:username, :avatar_url] },
-        tags: { only: :name }
-      }
-    })
+                     only: [:title, :body, :published_at, :slug],
+                     include: {
+                         user: {methods: [:avatar_url], only: [:username, :avatar_url]},
+                         tags: {only: :name}
+                     }
+                 })
   end
 
   def index_document
@@ -66,24 +57,24 @@ module SearchablePost
   end
 
   INDEX_OPTIONS =
-    { number_of_shards: 1, analysis: {
-    filter: {
-      "autocomplete_filter" => {
-        type: "edge_ngram",
-        min_gram: 1,
-        max_gram: 20
+      {number_of_shards: 1, analysis: {
+          filter: {
+              "autocomplete_filter" => {
+                  type: "edge_ngram",
+                  min_gram: 1,
+                  max_gram: 20
+              }
+          },
+          analyzer: {
+              "autocomplete" => {
+                  type: "custom",
+                  tokenizer: "standard",
+                  filter: [
+                      "lowercase",
+                      "autocomplete_filter"
+                  ]
+              }
+          }
       }
-    },
-    analyzer: {
-      "autocomplete" => {
-        type: "custom",
-        tokenizer: "standard",
-        filter: [
-          "lowercase",
-          "autocomplete_filter"
-        ]
       }
-    }
-  }
-  }
 end

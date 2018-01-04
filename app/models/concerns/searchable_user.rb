@@ -10,10 +10,10 @@ module SearchableUser
 
     settings INDEX_OPTIONS do
       mappings dynamic: 'false' do
-        indexes :username, analyzer: 'autocomplete'
-        indexes :email
-        indexes :avatar_url
-        indexes :slug
+        indexes :username, type: :text, analyzer: 'autocomplete'
+        indexes :email, type: :text, analyzer: :keyword
+        indexes :avatar_url, type: :text, analyzer: :keyword
+        indexes :slug, type: :text, analyzer: :keyword
       end
     end
 
@@ -63,12 +63,9 @@ module SearchableUser
     },
     analyzer: {
       "autocomplete" => {
-        type: "custom",
-        tokenizer: "standard",
-        filter: [
-          "lowercase",
-          "autocomplete_filter"
-        ]
+        type: 'custom',
+        tokenizer: 'standard',
+        filter: %w(lowercase autocomplete_filter)
       }
     }
   }

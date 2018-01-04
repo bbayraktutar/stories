@@ -9,7 +9,7 @@ class AddTagPopover extends React.Component {
       <div className="add-tag-popover popover top">
         <div className="arrow" />
         <h3 className="popover-title">
-          Add your interest
+            {I18n.t('headings.add_tag')}
         </h3>
         <div className="popover-content">
           <form onSubmit={this.handleAddTag.bind(this)}>

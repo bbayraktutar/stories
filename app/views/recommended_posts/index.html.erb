@@ -10,7 +10,7 @@
       </div>
     </header>
     <div class="following-metadata">
-      <span class="following-count"><b><%= @user.following.size %></b> Following</span>
+      <span class="following-count"><b><%= @user.following.size %></b> <%= t('headings.following') %></span>
       <span class="follower-count"><%= highlight(pluralize(@user.followers.size, t('headings.followers_singular')), /\d+/, highlighter: '<b>\1</b>') %></span>
     </div>
 

@@ -21,7 +21,7 @@ sv:
     publish: Publicera
     save: Spara
     cancel: Avbryt
-    see_all: Se alla inlägg
+    see_all: Se alla...
     create_account: Skapa konto
     go_full_screen: Växla till helskärn
     saving: Sparar...
@@ -54,15 +54,17 @@ sv:
     sign_in_up: Logga in / Registrera dig
     staff_pick: Utvalda inlägg
   headings:
-    tagged_in: Tag
+    all: Allt
+    tags: Intressen
+    tagged_in: Intressen
     top_stories: Mest lästa
-    tags_you_follow: Taggar du följer
-    related_tags: Relaterade taggar
+    tags_you_follow: Intressen du följer
+    related_tags: Relaterade intressen
     people_interested_in: Medlemmar interesserade av
-    people_to_follow: Medlemmar att följa
+    people_to_follow: Följ medlemmar
     you_follow_everybody: Du följer alla medlemmar
     read_more: Läs mer %{suffix}
-    featured_tags: Rekommenderade taggar
+    featured_tags: Rekommenderade intressen
     recommended_by: Rekommenderad av
     recommended_by_2: Rekommenderade inlägg av
     recommended_by_staff_and: Rekommenderad av redaktionen och av
@@ -93,12 +95,18 @@ sv:
     delete_success: Ditt inlägg har raderats
     create_error: Kunde inte skapa inlägget. Var god försök igen.
     update_error: Kunde inte uppdatera inlägget. Var god försök igen
-
+    your_stories: Dina inlägg
+    untitled: Utan titel
+    add_tag: Lägg till intresse
+    title: Titel
 
   activerecord:
     models:
       post: inlägg
       user: Användare
+      tag:
+        one: Intressetag
+        other: Intressen
       response: reaktion/kommentar
       notification:
         one: Uppdatering

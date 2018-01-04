@@ -21,7 +21,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 
 # Front-end
-gem 'react-rails', '2.3.1'
+gem 'react-rails', '1.10.0'
 gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'font-awesome-sass'
@@ -30,7 +30,7 @@ gem 'autoprefixer-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-#gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 2.5', '>= 2.5.4'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'jbuilder', '~> 2.7'
 
@@ -47,10 +47,10 @@ gem 'sdoc', group: :doc
 gem 'will_paginate'
 
 # Elasticsearch
-gem 'elasticsearch', '1.0.15'
-gem 'elasticsearch-transport', '1.0.15'
-gem 'elasticsearch-model', '~> 0.1.8'
-gem 'elasticsearch-rails', '~> 0.1.8'
+gem 'elasticsearch'
+gem 'elasticsearch-transport'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 # Background Job
 gem 'sidekiq'
