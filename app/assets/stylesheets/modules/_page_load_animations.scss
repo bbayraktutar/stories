@@ -1,5 +1,5 @@
 .animated {
-  animation-duration: 1000ms;
+  animation-duration: 800ms;
   animation-fill-mode: both;
 }
 
@@ -78,15 +78,17 @@
   }
 
   60% {
-    opacity: 1;
+    opacity: 0.3;
     transform: translate3d(25px, 0, 0);
   }
 
   75% {
+    opacity: 0.6;
     transform: translate3d(-10px, 0, 0);
   }
 
   90% {
+    opacity: 1;
     transform: translate3d(5px, 0, 0);
   }
 

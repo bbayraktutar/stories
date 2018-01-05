@@ -94,7 +94,7 @@ class UserOverlay extends React.Component {
   renderPrevButton() {
     if (this.state.currentPage > 1) {
       return (
-        <a className="button" onClick={this.handlePrevClick}>Prev</a>
+        <a className="button" onClick={this.handlePrevClick}>{I18n.t('heading.previous')}</a>
       );
     }
   }
@@ -102,7 +102,7 @@ class UserOverlay extends React.Component {
   renderNextButton() {
     if (this.state.nextPage !== null) {
       return (
-        <a className="button" onClick={this.handleNextClick}>Next</a>
+        <a className="button" onClick={this.handleNextClick}>{I18n.t('heading.next')}</a>
       );
     }
   }
