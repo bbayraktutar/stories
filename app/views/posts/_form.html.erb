@@ -1,4 +1,4 @@
-<%= form_for post, html: { multipart: true, class: "editor-form", data: { page: 'main-editor' }, autocomplete: "off" } do |f| %>
+<%= form_for post, html: {multipart: true, class: "editor-form", data: {page: 'main-editor'}, autocomplete: "off"} do |f| %>
 
   <label class="picture_upload">
     <%= f.file_field :picture %>
@@ -14,19 +14,22 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.text_field :title, class: 'editor-title', placeholder: t('headings.title'), autofocus: true, data: { behavior: "autosave" }, onfocus: "this.value = this.value;" %>
+    <%= f.text_field :title, class: 'editor-title', placeholder: t('headings.title'), autofocus: true, data: {behavior: "autosave"}, onfocus: "this.value = this.value;" %>
   </div>
 
   <div class="form-group">
-    <%= f.text_area :body, class: 'medium-editable', data: { behavior: "autosave" } %> 
+    <%= f.text_area :body, class: 'medium-editable', data: {behavior: "autosave"} %>
   </div>
 
-  <div class="form-group">
-    <% if post.archived? %>
-      <%= f.label t('headings.activate_post?:') %> <br />
-      <%= f.check_box :status, {}, true, false %> <br />
-    <% end %>
-  </div>
+
+  <% if post.archived? %>
+    <div class="field remember-me">
+      <%= f.label :status, t('headings.activate_post') %>
+      <%= f.check_box :status, {}, true, false %>
+
+    </div>
+
+  <% end %>
 
   <div class="hidden">
     <%= f.text_field :all_tags %>

@@ -74,7 +74,9 @@ sv:
     recommended_by_staff: Readaktionen
     responses: Reaktioner / Kommentarer
     related_posts: Relaterade inlägg
-    no_published_stories: Inga publiceade inlägg ännu...
+    no_published_stories: Du har inga publiceade inlägg ännu...
+    no_archived_stories: Du har inga arkiverade inlägg.
+    no_drafted_stories: Du har inga utkast ännu...
     reaction_comment: 'Skriv en kommentar...'
     drafts_and_stories: Utkast och inlägg
     interests: Intressen
@@ -104,7 +106,7 @@ sv:
     title: Titel
     previous: Förra
     next: Nästa
-    activate_post?: Vill du aktivera detta inlägg?
+    activate_post: Vill du aktivera detta inlägg?
   activerecord:
     models:
       post: inlägg
