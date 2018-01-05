@@ -24,7 +24,7 @@ class AddTagPopover extends React.Component {
                 className="input-group-addon add-button"
                 onClick={this.handleAddTag.bind(this)}
               >
-                Add
+                {I18n.t('application.add')}
               </span>
             </div>
           </form>

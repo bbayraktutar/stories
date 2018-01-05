@@ -35,6 +35,7 @@ sv:
     responses: reaktioner
     other: annan
     others: andra
+    add: Lägg till
     notifications:
       name: Uppdateringar
       also_commented_on_a: kommenterade även
@@ -99,6 +100,8 @@ sv:
     untitled: Utan titel
     add_tag: Lägg till intresse
     title: Titel
+    previous: Förra
+    next: Nästa
 
   activerecord:
     models:

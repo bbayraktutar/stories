@@ -1,7 +1,7 @@
 .progress-bar.active {
   background-color: $progress-bar;
   position: fixed;
-  height: 2px;
+  height: 5px;
   top: 0;
   z-index: $navbar-fixed-top + 1;
   border: none;
@@ -9,6 +9,7 @@
   animation-name: progressBar;
   animation-duration: 500ms;
   animation-iteration-count: infinite;
+  opacity: 0.2;
 }
 
 @keyframes progressBar {
