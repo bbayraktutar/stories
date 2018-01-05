@@ -2,8 +2,8 @@
 <html>
 <head>
   <title><%= t('application.name') %></title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
@@ -13,32 +13,33 @@
 
 </head>
 <body class="<%= controller.controller_name %> <%= controller.action_name %>">
-  <%= render 'layouts/overlay' unless user_signed_in? %>
-  <%= react_component('UserOverlay', {}) %>
-
+<%= render 'layouts/overlay' unless user_signed_in? %>
+<%= react_component('UserOverlay', {}) %>
+<% unless browser.device.mobile? %>
   <div data-behavior="progress-bar" class="progress-bar"></div>
+<% end %>
 
-  <% if admin_signed_in? %>
-    <%= render 'layouts/admin_header' %>
-  <% else %>
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/hero_image' if current_page?('/') %>
-  <% end %>
-  <%= render 'layouts/alert_messages' %>
+<% if admin_signed_in? %>
+  <%= render 'layouts/admin_header' %>
+<% else %>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/hero_image' if current_page?('/') and !browser.device.mobile? %>
+<% end %>
+<%= render 'layouts/alert_messages' %>
 
-  <div class="container-fluid main-container">
-    <%= yield %>
-    <%= yield :sidebar %>
-  </div>
+<div class="container-fluid main-container">
+  <%= yield %>
+  <%= yield :sidebar %>
+</div>
 
 </body>
 <script type="text/javascript">
-  window.userSignedIn = <%= user_signed_in? %>;
-  I18n.defaultLocale = "<%= I18n.default_locale %>";
-  I18n.locale = "<%= I18n.locale %>";
-  I18n.fallbacks = true;
-  I18n.locales["sv"] = function(locale) {
-      return ["sv", "en"]
-  }
+    window.userSignedIn = <%= user_signed_in? %>;
+    I18n.defaultLocale = "<%= I18n.default_locale %>";
+    I18n.locale = "<%= I18n.locale %>";
+    I18n.fallbacks = true;
+    I18n.locales["sv"] = function (locale) {
+        return ["sv", "en"]
+    }
 </script>
 </html>
