@@ -82,7 +82,7 @@ class NotificationsContainer extends React.Component {
         if (!this.state.notifications.length) {
             return (
                 <div className="no-notifications">
-                    <div className="speech-bubble">Nothing to see here...</div>
+                    <div className="speech-bubble">{I18n.t('headings.nothing_to_see')}</div>
                     <span className="speech-arrow-top"></span>
                     <span className="speech-arrow-bottom"></span>
 

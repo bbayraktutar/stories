@@ -38,6 +38,8 @@ sv:
     other: annan
     others: andra
     add: Lägg till
+    mailer:
+      new_user_subject: Välkommen till Torgny.io
     notifications:
       name: Uppdateringar
       also_commented_on_a: kommenterade även
@@ -97,7 +99,8 @@ sv:
     tell_about_youself: Berätta för världen vem du är! (En kort presentation som kommer att synas på dina inlägg)
     published_success: Ditt inlägg har publicerats
     update_success: Ditt inlägg har uppdaterats
-    delete_success: Ditt inlägg har raderats
+    delete_success: Ditt inlägg har arkiverats
+    archive_success: Ditt inlägg har raderats
     create_error: Kunde inte skapa inlägget. Var god försök igen.
     update_error: Kunde inte uppdatera inlägget. Var god försök igen
     your_stories: Dina inlägg
@@ -107,6 +110,7 @@ sv:
     previous: Förra
     next: Nästa
     activate_post: Vill du aktivera detta inlägg?
+    nothing_to_see: Har inget att visa här...
   activerecord:
     models:
       post: inlägg

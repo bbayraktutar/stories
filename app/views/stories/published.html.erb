@@ -21,7 +21,14 @@
           <% @posts.each do |post| %>
             <div class="story-card" id="story_<%= post.id %>">
               <strong class="sc-title"><%= link_to post.title, edit_post_path(post) %></strong>
-              <small class="sc-metadata"><%= t('application.is_published') %> <%= time_ago_in_words(post.published_at) %> ago &#149; <%= post_length_in_minutes(post.body) %>
+              <small class="sc-metadata">
+                <strong>
+                  <%= [t('application.last_edited'), time_ago_in_words(post.updated_at), t('application.ago')].join(' ') %> &#149;
+                </strong>
+                <% if post.body.present? %>
+                  <%= post_length_in_minutes(post.body) %>
+                  &#149; <%= t('application.word_count', words: post.word_count) %>
+                <% end %>
                 <div class="btn-group">
                   <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span class="glyphicon glyphicon-chevron-down"></span>
