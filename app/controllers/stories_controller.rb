@@ -10,6 +10,7 @@ class StoriesController < ApplicationController
   end
 
   def archived
+    binding.pry
   	@archived_posts = current_user.posts.recent.published.archived
   end
 end

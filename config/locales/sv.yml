@@ -97,7 +97,8 @@ sv:
     tell_about_youself: Berätta för världen vem du är! (En kort presentation som kommer att synas på dina inlägg)
     published_success: Ditt inlägg har publicerats
     update_success: Ditt inlägg har uppdaterats
-    delete_success: Ditt inlägg har raderats
+    delete_success: Ditt inlägg har arkiverats
+    archive_success: Ditt inlägg har raderats
     create_error: Kunde inte skapa inlägget. Var god försök igen.
     update_error: Kunde inte uppdatera inlägget. Var god försök igen
     your_stories: Dina inlägg
