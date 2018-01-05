@@ -33,6 +33,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 2.5', '>= 2.5.4'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'jbuilder', '~> 2.7'
+gem 'browser'
 
 gem 'friendly_id', '~> 5.2', '>= 5.2.3'
 
