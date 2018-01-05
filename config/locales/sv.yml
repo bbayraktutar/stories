@@ -38,6 +38,8 @@ sv:
     other: annan
     others: andra
     add: Lägg till
+    mailer:
+      new_user_subject: Välkommen till Torgny.io
     notifications:
       name: Uppdateringar
       also_commented_on_a: kommenterade även
@@ -108,6 +110,7 @@ sv:
     previous: Förra
     next: Nästa
     activate_post: Vill du aktivera detta inlägg?
+    nothing_to_see: Har inget att visa här...
   activerecord:
     models:
       post: inlägg

@@ -24,6 +24,6 @@ class Notification < ActiveRecord::Base
   scope :unread, -> { where(read_at: nil) }
 
   def notifiable_humanized
-    self.notifiable.model_name.human
+    self.notifiable.class.model_name.human
   end
 end
