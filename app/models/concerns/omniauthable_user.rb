@@ -56,6 +56,7 @@ module OmniauthableUser
     # end
     #
     def self.from_omniauth(omniauth)
+      binding.pry
       authentication = Authentication.find_by(provider: omniauth['provider'], uid: omniauth['uid'].to_s)
       if authentication
         authentication.user
@@ -75,13 +76,17 @@ module OmniauthableUser
 
   end
 
-
   def password_required?
-    super && self.provider.blank?
+    binding.pry
+    (authentications.empty? || !password.blank?) && super
   end
 
-  def email_required?
-    super && self.provider.blank?
-  end
+  # def password_required?
+  #   super && self.provider.blank?
+  # end
+  #
+  # def email_required?
+  #   super && self.provider.blank?
+  # end
 
 end

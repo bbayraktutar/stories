@@ -6,11 +6,6 @@ module OmniauthProviders
             name: 'Facebook',
             icon: 'fa-facebook-square'
         },
-        # {
-        #     key: :instagram,
-        #     name: 'Instagram',
-        #     icon: 'fa-instagram'
-        # },
         {
             key: :twitter,
             name: 'Twitter',
@@ -29,9 +24,7 @@ module OmniauthProviders
   end
 
   def self.finish_auth_for(authentication)
-    if authentication.provider == 'meetup'
-      MeetupImporter.new.associate_user(authentication.user, authentication.uid)
-    end
+    # are we doing any after actions?
   end
 
   def self.provider_data_for(provider)
@@ -47,8 +40,6 @@ module OmniauthProviders
         attribute_generator.twitter
       when 'google_oauth2'
         attribute_generator.google_oauth2
-      when 'instagram'
-        attribute_generator.instagram
       else
         raise 'Unknown Provider'
     end
@@ -71,7 +62,9 @@ module OmniauthProviders
     def twitter
       {
           email: omniauth['info']['email'],
-          username: omniauth['info']['name']
+          username: omniauth['info']['name'],
+          description: omniauth['info']['description'],
+          location: omniauth['info']['location']
       }
     end
 
@@ -82,16 +75,5 @@ module OmniauthProviders
       }
     end
 
-    private
-
-    def split_name(full_name)
-      return {} if full_name.blank?
-
-      components = full_name.split(' ')
-      {
-          first_name: components[0],
-          last_name: components[1..-1].join(' ')
-      }
-    end
   end
 end

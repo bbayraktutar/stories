@@ -61,6 +61,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
 
     user = User.from_omniauth(omniauth)
+    binding.pry
     store_location_for(user, request.env['omniauth.origin']) if request.env['omniauth.origin']
     if user.persisted?
       flash[:notice] = "#{provider_name} login successful."
@@ -71,7 +72,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
-  [:facebook, :twitter, :google_oauth2, :instagram].each do |provider|
+  [:facebook, :twitter, :google_oauth2].each do |provider|
     alias_method provider, :all
   end
 
