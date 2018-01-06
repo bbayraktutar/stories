@@ -86,6 +86,10 @@ class User < ActiveRecord::Base
     send("bookmarked_#{downcased_class_name(bookmarkable_obj)}_ids").include?(bookmarkable_obj.id)
   end
 
+  def active_for_authentication?
+    !self.provider.present? && super
+  end
+
   private
 
   # Validates the size on an uploaded image.
@@ -107,10 +111,5 @@ class User < ActiveRecord::Base
 
   def send_welcome_email
     WelcomeEmailJob.perform_later(self.id)
-  end
-
-  def active_for_authentication?
-    binding.pry
-    super && !provider
   end
 end

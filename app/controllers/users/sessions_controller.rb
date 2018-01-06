@@ -5,11 +5,6 @@ class Users::SessionsController < Devise::SessionsController
     super
   end
 
-  def create
-    super & binding.pry
-
-  end
-
   def destroy
     super
   end
@@ -18,7 +13,7 @@ class Users::SessionsController < Devise::SessionsController
 
   def redirect_admin_user
     if admin_signed_in?
-      redirect_to root_url, alert: "Please sign out of admin session"
+      redirect_to root_url, alert: 'Please sign out of admin session'
     end
   end
 

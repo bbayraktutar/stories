@@ -1,6 +1,7 @@
 module OmniauthableUser
   extend ActiveSupport::Concern
 
+  # TODO: Refactor the following methods to one. Lot of duplication here...
   included do
     # Add SecureRandom.hex to user's email to avaoid confilict between
     # providers. If one user uses the same email for Facebook and Google,
@@ -8,14 +9,16 @@ module OmniauthableUser
     def self.find_or_create_from_facebook_omniauth(auth)
       user = where(provider: auth.provider, uid: auth.uid).first_or_create
       unless auth.info.image.nil?
-        user.remote_avatar_url = auth.info.image.gsub('http://','https://') + '?type=large'
+        user.remote_avatar_url = auth.info.image.gsub('http://', 'https://') + '?type=large'
       end
       user.assign_attributes(
-        email: auth.info.email,
-        password: Devise.friendly_token[0,20],
-        username: auth.info.name
+          email: auth.info.email,
+          password: Devise.friendly_token[0, 20],
+          username: auth.info.name
       )
-      user.save(validate: false)
+      user.save(validate: false) # hack to allow duplicate emails
+      user.provider = nil # hack to allow OAuth user to log in
+      user
     end
 
     def self.find_or_create_from_twitter_omniauth(auth)
@@ -24,22 +27,26 @@ module OmniauthableUser
         user.remote_avatar_url = auth.info.image.gsub('http://', 'https://').gsub('_normal', '')
       end
       user.assign_attributes(
-        username: auth.info.name,
-        password: Devise.friendly_token[0, 20],
-        email: auth.info.email # Note that Twitter does not provide email if you don't request that in your app settings
+          username: auth.info.name,
+          password: Devise.friendly_token[0, 20],
+          email: auth.info.email # Note that Twitter does not provide email if you don't request that in your app settings
       )
-      user.save(validate: false)
+      user.save(validate: false) # hack to allow duplicate emails
+      user.provider = nil # hack to allow OAuth user to log in
+      user
     end
 
     def self.find_or_create_from_google_omniauth(auth)
       user = where(provider: auth.provider, uid: auth.uid).first_or_create
       user.remote_avatar_url = auth.info.image
       user.assign_attributes(
-        username: auth.info.name,
-        email: auth.info.email,
-        password: Devise.friendly_token[0, 20]
+          username: auth.info.name,
+          email: auth.info.email,
+          password: Devise.friendly_token[0, 20]
       )
-      user.save(validate: false)
+      user.save(validate: false) # hack to allow duplicate emails
+      user.provider = nil # hack to allow OAuth user to log in
+      user
     end
 
     def self.new_with_session(params, session)
@@ -65,3 +72,5 @@ module OmniauthableUser
   end
 
 end
+
+
