@@ -10,12 +10,12 @@ module OmniauthableUser
       unless auth.info.image.nil?
         user.remote_avatar_url = auth.info.image.gsub('http://','https://') + '?type=large'
       end
-      user.update(
-        email: "#{SecureRandom.hex}#{auth.info.email}",
+      user.assign_attributes(
+        email: auth.info.email,
         password: Devise.friendly_token[0,20],
         username: auth.info.name
       )
-      user
+      user.save(validate: false)
     end
 
     def self.find_or_create_from_twitter_omniauth(auth)
@@ -23,23 +23,23 @@ module OmniauthableUser
       unless auth.info.image.nil?
         user.remote_avatar_url = auth.info.image.gsub('http://', 'https://').gsub('_normal', '')
       end
-      user.update(
+      user.assign_attributes(
         username: auth.info.name,
         password: Devise.friendly_token[0, 20],
-        email: "#{SecureRandom.hex}#{auth.info.nickname}@mymediumclone.com" # Twitter does not provide email
+        email: auth.info.email # Note that Twitter does not provide email if you don't request that in your app settings
       )
-      user
+      user.save(validate: false)
     end
 
     def self.find_or_create_from_google_omniauth(auth)
       user = where(provider: auth.provider, uid: auth.uid).first_or_create
       user.remote_avatar_url = auth.info.image
-      user.update(
+      user.assign_attributes(
         username: auth.info.name,
-        email: "#{SecureRandom.hex}#{auth.info.email}",
+        email: auth.info.email,
         password: Devise.friendly_token[0, 20]
       )
-      user
+      user.save(validate: false)
     end
 
     def self.new_with_session(params, session)

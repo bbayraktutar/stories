@@ -108,4 +108,9 @@ class User < ActiveRecord::Base
   def send_welcome_email
     WelcomeEmailJob.perform_later(self.id)
   end
+
+  def active_for_authentication?
+    binding.pry
+    super && !provider
+  end
 end
