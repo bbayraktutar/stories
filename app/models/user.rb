@@ -29,9 +29,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
+         :omniauthable #, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
   validates :username, presence: true
   validate :avatar_image_size
+
+  has_many :authentications, inverse_of: :user, dependent: :destroy
 
   has_many :posts, dependent: :destroy
   has_many :responses, dependent: :destroy

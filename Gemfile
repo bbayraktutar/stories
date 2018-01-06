@@ -98,6 +98,7 @@ group :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'launchy'
+  gem 'shoulda-matchers'
 end
 
 group :production do

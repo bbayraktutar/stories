@@ -1,0 +1,12 @@
+class CreateAuthentications < ActiveRecord::Migration[5.1]
+  def change
+    create_table :authentications, force: :cascade do |t|
+      t.references :user, foreign_key: true
+      t.string :provider
+      t.string :uuid
+      t.string :timestamps
+
+      t.timestamps
+    end
+  end
+end
