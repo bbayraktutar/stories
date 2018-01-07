@@ -17,11 +17,11 @@ module OmniauthableUser
           username: auth.info.name
       )
       user.save(validate: false) # hack to allow duplicate emails
-      user.provider = nil # hack to allow OAuth user to log in
       user
     end
 
     def self.find_or_create_from_twitter_omniauth(auth)
+      binding.pry
       user = where(provider: auth.provider, uid: auth.uid).first_or_create
       unless auth.info.image.nil?
         user.remote_avatar_url = auth.info.image.gsub('http://', 'https://').gsub('_normal', '')
@@ -32,7 +32,6 @@ module OmniauthableUser
           email: auth.info.email # Note that Twitter does not provide email if you don't request that in your app settings
       )
       user.save(validate: false) # hack to allow duplicate emails
-      user.provider = nil # hack to allow OAuth user to log in
       user
     end
 
@@ -45,7 +44,6 @@ module OmniauthableUser
           password: Devise.friendly_token[0, 20]
       )
       user.save(validate: false) # hack to allow duplicate emails
-      user.provider = nil # hack to allow OAuth user to log in
       user
     end
 
